@@ -1,4 +1,5 @@
 import { links, talk } from "@/content/site";
+import { mediaSrc } from "@/content/media";
 import { ImageGallery } from "./ImageGallery";
 import { Photo } from "./Photo";
 import { Reveal } from "./Reveal";
@@ -7,17 +8,18 @@ import { StorySection } from "./StorySection";
 
 /** Vídeo com controles nativos, sem autoplay; carrega só metadados até o play. */
 export function VideoSection() {
+  const videoSrc = mediaSrc(talk.video);
   return (
     <StorySection id="palestra" number="09" title={talk.title} className="overflow-hidden">
       <div aria-hidden className="glow -top-20 right-0 h-[360px] w-[360px] bg-pink/15" />
       <div className="relative grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
         <Reveal>
-          {talk.video.src ? (
+          {videoSrc ? (
             <div className="media-frame aspect-video">
               <video
                 className="h-full w-full object-cover"
-                src={talk.video.src}
-                poster={talk.video.poster.src}
+                src={videoSrc}
+                poster={mediaSrc(talk.video.poster)}
                 controls
                 preload="metadata"
                 playsInline

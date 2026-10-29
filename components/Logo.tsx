@@ -1,10 +1,11 @@
 import Image from "next/image";
+import { mediaSrc } from "@/content/media";
 
 /**
- * Logo provisória (tipográfica). Substituir por /public/media/logo/logo-horizontal.svg
- * somente após aprovação da nova proposta de logo.
+ * Logo provisória (tipográfica). Ao salvar public/media/logo/logo-horizontal.svg
+ * (ou .png), ela substitui o texto automaticamente. Só fazer após a aprovação da nova logo.
  */
-const LOGO_SRC = ""; // ex.: "/media/logo/logo-horizontal-branca.svg"
+const LOGO_SRC = mediaSrc({ file: "logo/logo-horizontal" });
 
 export function Logo({ className = "" }: { className?: string }) {
   if (LOGO_SRC) {

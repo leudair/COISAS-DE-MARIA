@@ -1,16 +1,19 @@
 /**
  * Conteúdo editável do site.
  *
- * Fotos: coloque o arquivo em /public/media/<pasta>/ e preencha `src`
- * (ex.: "/media/hero/ana-liz.jpg"). Enquanto `src` estiver vazio, o site
- * mostra um placeholder marcado com a descrição da foto esperada.
+ * Fotos: basta salvar o arquivo em public/media/ com o nome indicado em `file`
+ * (qualquer extensão: .jpg, .jpeg, .png, .webp ou .avif). Ex.: `file: "01-abertura/ana-liz"`
+ * → public/media/01-abertura/ana-liz.jpg. A lista completa está em public/media/LEIA-ME.md.
+ * Enquanto o arquivo não existir, o site mostra o placeholder "Foto pendente".
  *
  * Textos marcados com `review: true` precisam ser conferidos e aprovados
  * pela Ana Liz antes da publicação.
  */
 
 export type Media = {
-  /** Caminho do arquivo em /public. Vazio = placeholder. */
+  /** Nome do arquivo em public/media, sem extensão. */
+  file?: string;
+  /** Caminho explícito em /public (opcional; tem prioridade sobre `file`). */
   src?: string;
   /** Texto alternativo (acessibilidade). */
   alt: string;
@@ -61,7 +64,7 @@ export const hero = {
   text: "Uma história de fé, força e recomeço que se transformou em uma missão de amor e autoestima.",
   photo: {
     alt: "Ana Liz, de cabeça raspada, olhando para a câmera",
-    needed: "Foto atual da Ana Liz (preferência: cabeça raspada), aprovada por ela",
+    file: "01-abertura/ana-liz", needed: "Foto atual da Ana Liz (preferência: cabeça raspada), aprovada por ela",
     ratio: "portrait",
   } satisfies Media,
 };
@@ -93,8 +96,8 @@ export const childhood = {
     },
   ],
   photos: [
-    { alt: "Ana Liz na infância", needed: "Foto de infância da Ana", ratio: "portrait" },
-    { alt: "Ana Liz com a avó Maria", needed: "Foto da Ana com a avó Maria", ratio: "landscape" },
+    { alt: "Ana Liz na infância", file: "02-infancia/infancia", needed: "Foto de infância da Ana", ratio: "portrait" },
+    { alt: "Ana Liz com a avó Maria", file: "02-infancia/avo-maria", needed: "Foto da Ana com a avó Maria", ratio: "landscape" },
   ] satisfies Media[],
 };
 
@@ -114,9 +117,9 @@ export const journey = {
     { title: "Coisas de Maria", text: "Dessa trajetória nasceu a Coisas de Maria." },
   ],
   photos: [
-    { alt: "Primeiros tempos do negócio", needed: "Foto do início: vendas como sacoleira ou primeiro espaço", ratio: "landscape" },
-    { alt: "Loja no centro de Lages", needed: "Foto da loja em Lages", ratio: "landscape" },
-    { alt: "Loja em Balneário Camboriú", needed: "Foto da loja em Balneário Camboriú", ratio: "landscape" },
+    { alt: "Primeiros tempos do negócio", file: "03-trajetoria/inicio", needed: "Foto do início: vendas como sacoleira ou primeiro espaço", ratio: "landscape" },
+    { alt: "Loja no centro de Lages", file: "03-trajetoria/lages", needed: "Foto da loja em Lages", ratio: "landscape" },
+    { alt: "Loja em Balneário Camboriú", file: "03-trajetoria/balneario-camboriu", needed: "Foto da loja em Balneário Camboriú", ratio: "landscape" },
   ] satisfies Media[],
 };
 
@@ -132,7 +135,7 @@ export const mirror = {
   ],
   photo: {
     alt: "Retrato de Ana Liz",
-    needed: "Foto real da Ana para a composição do espelho",
+    file: "04-espelho/ana-espelho", needed: "Foto real da Ana para a composição do espelho",
     ratio: "portrait",
   } satisfies Media,
 };
@@ -149,7 +152,7 @@ export const scars = {
   ],
   photo: {
     alt: "Ana Liz em retrato sereno",
-    needed: "Foto escolhida pela própria Ana para esta fase (sem exposição sensacionalista)",
+    file: "05-cicatrizes/ana-forca", needed: "Foto escolhida pela própria Ana para esta fase (sem exposição sensacionalista)",
     ratio: "portrait",
   } satisfies Media,
 };
@@ -164,14 +167,14 @@ export const family = {
   ],
   text: "A família é o lugar onde Ana encontra sentido. São as pessoas que acompanharam cada passo da sua trajetória, nos dias difíceis e nos momentos de celebração.",
   album: [
-    { alt: "Ana com as filhas", needed: "Ana com as filhas", caption: "Minhas Marias", ratio: "portrait" },
-    { alt: "Ana com Maria Eduarda", needed: "Ana com Maria Eduarda", caption: "Maria Eduarda", ratio: "portrait" },
-    { alt: "Ana com Maria Valentina", needed: "Ana com Maria Valentina", caption: "Maria Valentina", ratio: "portrait" },
-    { alt: "Ana com familiares", needed: "Ana com familiares", caption: "Família", ratio: "portrait" },
-    { alt: "Momento especial da família", needed: "Momento importante da família", caption: "Momentos especiais", ratio: "portrait" },
-    { alt: "Celebração em família", needed: "Momento de gratidão ou celebração", caption: "Gratidão", ratio: "portrait" },
-    { alt: "Registro da trajetória pessoal", needed: "Foto da trajetória pessoal", caption: "Trajetória", ratio: "portrait" },
-    { alt: "Ana com a avó Maria", needed: "Ana com a avó Maria", caption: "Vó Maria", ratio: "portrait" },
+    { alt: "Ana com as filhas", file: "06-familia/01-ana-com-as-filhas", needed: "Ana com as filhas", caption: "Minhas Marias", ratio: "portrait" },
+    { alt: "Ana com Maria Eduarda", file: "06-familia/02-maria-eduarda", needed: "Ana com Maria Eduarda", caption: "Maria Eduarda", ratio: "portrait" },
+    { alt: "Ana com Maria Valentina", file: "06-familia/03-maria-valentina", needed: "Ana com Maria Valentina", caption: "Maria Valentina", ratio: "portrait" },
+    { alt: "Ana com familiares", file: "06-familia/04-familia", needed: "Ana com familiares", caption: "Família", ratio: "portrait" },
+    { alt: "Momento especial da família", file: "06-familia/05-momentos-especiais", needed: "Momento importante da família", caption: "Momentos especiais", ratio: "portrait" },
+    { alt: "Celebração em família", file: "06-familia/06-gratidao", needed: "Momento de gratidão ou celebração", caption: "Gratidão", ratio: "portrait" },
+    { alt: "Registro da trajetória pessoal", file: "06-familia/07-trajetoria", needed: "Foto da trajetória pessoal", caption: "Trajetória", ratio: "portrait" },
+    { alt: "Ana com a avó Maria", file: "06-familia/08-vo-maria", needed: "Ana com a avó Maria", caption: "Vó Maria", ratio: "portrait" },
   ] satisfies Media[],
 };
 
@@ -189,7 +192,7 @@ export const mission = {
     "Valorizar os relacionamentos com respeito e afeto",
   ],
   photos: [
-    { alt: "Atendimento na Coisas de Maria", needed: "Foto de atendimento/acolhimento na loja", ratio: "landscape" },
+    { alt: "Atendimento na Coisas de Maria", file: "07-missao/atendimento", needed: "Foto de atendimento/acolhimento na loja", ratio: "landscape" },
   ] satisfies Media[],
 };
 
@@ -209,14 +212,14 @@ export const brand = {
   ],
   /** TODO: conferir categorias com o catálogo atual da loja. */
   categories: [
-    { title: "Lingerie", photo: { alt: "Lingerie Coisas de Maria", needed: "Foto de produto: lingerie", ratio: "portrait" } },
-    { title: "Moda íntima", photo: { alt: "Moda íntima Coisas de Maria", needed: "Foto de produto: moda íntima", ratio: "portrait" } },
-    { title: "Bem-estar e autocuidado", photo: { alt: "Produtos de bem-estar", needed: "Foto de produto: bem-estar/autocuidado", ratio: "portrait" } },
-    { title: "Sex shop", photo: { alt: "Produtos sex shop", needed: "Foto de produto: sex shop (discreta)", ratio: "portrait" } },
+    { title: "Lingerie", photo: { alt: "Lingerie Coisas de Maria", file: "08-marca/categoria-lingerie", needed: "Foto de produto: lingerie", ratio: "portrait" } },
+    { title: "Moda íntima", photo: { alt: "Moda íntima Coisas de Maria", file: "08-marca/categoria-moda-intima", needed: "Foto de produto: moda íntima", ratio: "portrait" } },
+    { title: "Bem-estar e autocuidado", photo: { alt: "Produtos de bem-estar", file: "08-marca/categoria-bem-estar", needed: "Foto de produto: bem-estar/autocuidado", ratio: "portrait" } },
+    { title: "Sex shop", photo: { alt: "Produtos sex shop", file: "08-marca/categoria-sex-shop", needed: "Foto de produto: sex shop (discreta)", ratio: "portrait" } },
   ] satisfies { title: string; photo: Media }[],
   storePhoto: {
     alt: "Fachada e interior da loja Coisas de Maria",
-    needed: "Foto real da loja",
+    file: "08-marca/loja", needed: "Foto real da loja",
     ratio: "landscape",
   } satisfies Media,
 };
@@ -233,14 +236,14 @@ export const talk = {
   review: true,
   text: "Ana compartilha sua trajetória, suas experiências e mensagens de fé em palestras. Em “A Mulher por Trás do Espelho”, ela fala sobre autoestima, superação e o caminho de volta para si mesma.",
   video: {
-    /** Ex.: "/media/palestra/palestra.mp4" */
-    src: "",
-    poster: { alt: "Ana Liz palestrando", needed: "Capa do vídeo da palestra", ratio: "landscape" } as Media,
+    /** public/media/10-palestra/video.mp4 (ou .webm/.mov) */
+    file: "10-palestra/video",
+    poster: { alt: "Ana Liz palestrando", file: "10-palestra/capa-video", needed: "Capa do vídeo da palestra", ratio: "landscape" } as Media,
   },
   gallery: [
-    { alt: "Ana Liz no palco", needed: "Foto da palestra 1", ratio: "landscape" },
-    { alt: "Público da palestra", needed: "Foto da palestra 2", ratio: "landscape" },
-    { alt: "Ana Liz com participantes", needed: "Foto da palestra 3", ratio: "landscape" },
+    { alt: "Ana Liz no palco", file: "10-palestra/palestra-1", needed: "Foto da palestra 1", ratio: "landscape" },
+    { alt: "Público da palestra", file: "10-palestra/palestra-2", needed: "Foto da palestra 2", ratio: "landscape" },
+    { alt: "Ana Liz com participantes", file: "10-palestra/palestra-3", needed: "Foto da palestra 3", ratio: "landscape" },
   ] satisfies Media[],
 };
 

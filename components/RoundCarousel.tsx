@@ -17,6 +17,7 @@
  * - Borda pink sutil nas fotos.
  */
 
+import { mediaSrc } from "@/content/media";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Media } from "@/content/site";
 import { Photo } from "./Photo";
@@ -227,15 +228,15 @@ export function RoundCarousel({
                   type="button"
                   style={face}
                   className="block shadow-[0_0_0_1px_rgba(245,0,135,0.3),0_10px_30px_rgba(0,0,0,0.35)]"
-                  aria-label={`${m.caption ?? m.alt}${m.src ? ", ampliar foto" : " (foto pendente)"}`}
+                  aria-label={`${m.caption ?? m.alt}${mediaSrc(m) ? ", ampliar foto" : " (foto pendente)"}`}
                   onFocus={() => rotateTo(i)}
                   onClick={(e) => {
                     if (justDragged.current) return e.preventDefault();
-                    if (m.src) setActive(i);
+                    if (mediaSrc(m)) setActive(i);
                   }}
                 >
                   <Photo media={m} fill sizes={`${imageWidth}px`} className="!rounded-none !border-0" />
-                  {m.src && m.caption && (
+                  {mediaSrc(m) && m.caption && (
                     <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-3 pt-8 pb-3 text-left text-sm font-bold text-snow">
                       {m.caption}
                     </span>
@@ -265,7 +266,7 @@ export function RoundCarousel({
       </div>
       </div>
 
-      {active !== null && items[active]?.src && <Lightbox media={items[active]} onClose={() => setActive(null)} />}
+      {active !== null && mediaSrc(items[active]) && <Lightbox media={items[active]} onClose={() => setActive(null)} />}
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { mediaSrc } from "@/content/media";
 import type { Media } from "@/content/site";
 
 const ratioClass = {
@@ -23,7 +24,9 @@ type Props = {
 export function Photo({ media, className = "", sizes = "(min-width: 1024px) 50vw, 100vw", priority, fill }: Props) {
   const frame = `media-frame ${fill ? "h-full w-full" : ratioClass[media.ratio ?? "portrait"]} ${className}`;
 
-  if (!media.src) {
+  const src = mediaSrc(media);
+
+  if (!src) {
     return (
       <div className={frame} role="img" aria-label={`Foto pendente: ${media.needed}`}>
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 border border-dashed border-pink/40 p-6 text-center [border-radius:inherit]">
@@ -41,7 +44,7 @@ export function Photo({ media, className = "", sizes = "(min-width: 1024px) 50vw
 
   return (
     <figure className={frame}>
-      <Image src={media.src} alt={media.alt} fill sizes={sizes} priority={priority} className="object-cover" />
+      <Image src={src} alt={media.alt} fill sizes={sizes} priority={priority} className="object-cover" />
     </figure>
   );
 }
