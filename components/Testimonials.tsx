@@ -11,7 +11,7 @@ export function Testimonials() {
   const items = testimonials.filter((t) => t.authorized);
 
   return (
-    <section id="clientes" aria-labelledby="clientes-title" className="section bg-graphite">
+    <section id="clientes" aria-labelledby="clientes-title" className="section band-carbon">
       <div className="container-content">
         <Reveal className="max-w-3xl">
           <p className="eyebrow">Capítulo 08</p>

@@ -19,11 +19,11 @@ export function Hero() {
 
       <div className="container-content relative grid items-center gap-10 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
         <div className="order-1 mx-auto w-full max-w-[300px] sm:max-w-[400px] lg:order-2 lg:max-w-none">
-          <Photo media={hero.photo} priority sizes="(min-width: 1024px) 45vw, 90vw" className="shadow-[0_30px_80px_-30px_rgba(245,0,135,0.45)]" />
+          <Photo media={hero.photo} priority sizes="(min-width: 1024px) 45vw, 90vw" />
         </div>
 
         <div className="order-2 text-center lg:order-1 lg:text-left">
-          <h1 id="hero-title" className="text-3d font-black leading-[0.95] tracking-[-0.03em] [font-size:clamp(3.5rem,17vw,8.5rem)] [perspective:600px]">
+          <h1 id="hero-title" className="text-3d font-black leading-[0.95] tracking-[-0.03em] [font-size:clamp(3.5rem,17vw,6rem)] [perspective:600px]">
             {letters.map((l, i) => (
               <span key={i} className="name-letter" style={{ animationDelay: `${150 + i * 80}ms` }} aria-hidden>
                 {l === " " ? " " : l}

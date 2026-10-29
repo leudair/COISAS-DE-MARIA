@@ -30,7 +30,7 @@ export function BiographyTimeline({ items, alternate = false }: { items: Item[];
             <Reveal delay={Math.min(i, 3) * 80} className="card p-6 lg:p-7">
               {item.tag && <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blush">{item.tag}</p>}
               <h3 className="mt-1 text-xl font-extrabold text-snow">{item.title}</h3>
-              <p className="mt-2 text-snow/70">{item.text}</p>
+              <p className="mt-2 text-ash">{item.text}</p>
             </Reveal>
           </li>
         );

@@ -32,13 +32,13 @@ export function Header() {
         scrolled || open ? "bg-black/80 backdrop-blur-xl border-b border-white/5" : "bg-transparent"
       }`}
     >
-      <div className="container-content flex h-14 items-center justify-between lg:h-16">
+      <div className="container-content flex h-12 items-center justify-between">
         <a href="#inicio" className="flex items-center gap-2" aria-label="Ana Liz, voltar ao início">
           <Logo className="h-7 w-auto" />
         </a>
 
         <nav aria-label="Navegação principal" className="hidden lg:block">
-          <ul className="flex items-center gap-7 text-sm font-semibold text-snow/75">
+          <ul className="flex items-center gap-7 text-[13px] font-semibold text-white/80">
             {nav.map((item) => (
               <li key={item.href}>
                 <a href={item.href} className="transition-colors hover:text-pink">
@@ -72,7 +72,7 @@ export function Header() {
       <div
         id="menu-mobile"
         hidden={!open}
-        className="h-[calc(100dvh-56px)] overflow-y-auto border-t border-white/5 bg-black lg:hidden"
+        className="h-[calc(100dvh-48px)] overflow-y-auto border-t border-white/5 bg-chrome lg:hidden"
       >
         <nav aria-label="Menu" className="container-content py-8">
           <ul className="flex flex-col gap-1">

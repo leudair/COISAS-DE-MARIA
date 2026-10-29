@@ -33,15 +33,16 @@ export function BrandSection() {
               {brand.differentials.map((d, i) => (
                 <Reveal as="li" key={d.title} delay={i * 80} className="card p-5">
                   <h3 className="font-extrabold text-blush">{d.title}</h3>
-                  <p className="mt-1 text-snow/70">{d.text}</p>
+                  <p className="mt-1 text-ash">{d.text}</p>
                 </Reveal>
               ))}
             </ul>
           </div>
         </div>
 
-        <h3 className="mt-20 text-center text-2xl font-extrabold lg:mt-28 lg:text-3xl">Nossas categorias</h3>
-        <ul className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4 lg:gap-6">
+        <div className="panel mt-20 lg:mt-28">
+        <h3 className="text-center text-2xl font-extrabold lg:text-[40px] lg:leading-tight">Nossas categorias</h3>
+        <ul className="no-scrollbar -mx-6 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4 lg:gap-6">
           {brand.categories.map((c, i) => (
             <Reveal as="li" key={c.title} delay={i * 90} className="w-[72%] flex-none snap-start sm:w-auto">
               <div className="card overflow-hidden p-2">
@@ -51,6 +52,7 @@ export function BrandSection() {
             </Reveal>
           ))}
         </ul>
+        </div>
 
         <div className="mt-12 flex flex-col gap-3 sm:flex-row sm:justify-center">
           <a href={links.store} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Conheça nossa loja</a>

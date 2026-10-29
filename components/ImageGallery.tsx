@@ -24,7 +24,7 @@ export function ImageGallery({ items, columns = 3 }: { items: Media[]; columns?:
               ) : (
                 <Photo media={m} />
               )}
-              {m.caption && <p className="mt-3 text-sm font-semibold text-snow/60">{m.caption}</p>}
+              {m.caption && <p className="mt-3 text-sm font-semibold text-ash">{m.caption}</p>}
             </Reveal>
           </li>
         ))}

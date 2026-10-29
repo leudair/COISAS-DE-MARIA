@@ -22,7 +22,7 @@ export function Closing() {
           <a href={links.store} target="_blank" rel="noopener noreferrer" className="btn btn-ghost">Visite nossa loja virtual</a>
         </Reveal>
 
-        <ul aria-label="Valores" className="mt-16 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-black tracking-[0.14em] text-snow/50 lg:text-base">
+        <ul aria-label="Valores" className="mt-16 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm font-black tracking-[0.14em] text-ash lg:text-base">
           {closing.values.map((v) => (
             <li key={v}>{v}</li>
           ))}

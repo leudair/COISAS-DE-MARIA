@@ -5,7 +5,7 @@ import { Quote, StorySection } from "./StorySection";
 
 export function MissionSection() {
   return (
-    <StorySection id="missao" number="06" title={mission.title} className="bg-graphite">
+    <StorySection id="missao" number="06" title={mission.title} className="band-carbon">
       <ul aria-label="Palavras da missão" className="flex flex-col gap-1 [perspective:800px]">
         {mission.words.map((w, i) => (
           <Reveal as="li" key={w} delay={i * 110}>

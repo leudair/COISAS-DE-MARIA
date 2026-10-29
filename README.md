@@ -22,8 +22,8 @@ npm run build
 
 ## Pendências antes de publicar
 
-- [ ] DESIGN-2.md (ajuste fino de espaçamentos e hierarquia)
-- [ ] Código do Round Carousel (Originkit); hoje há uma implementação provisória em `components/RoundCarousel.tsx`
+- [x] DESIGN-2.md aplicado (tokens, ritmo, raios 28px, keylines sem sombra, faixas Carbon)
+- [x] Round Carousel da Originkit integrado e adaptado (`components/RoundCarousel.tsx`)
 - [ ] Fotos reais aprovadas pela Ana (hero, infância, trajetória, espelho, cicatrizes, família, missão, loja, palestra)
 - [ ] Logo modernizada (principal, horizontal, símbolo, branca, pink, favicon)
 - [ ] Depoimentos reais autorizados

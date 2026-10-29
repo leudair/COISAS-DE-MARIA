@@ -13,7 +13,7 @@ export function FamilySection() {
           {family.members.map((m) => (
             <li key={m.name} className="rounded-full border border-pink/30 px-5 py-2 text-sm">
               <strong className="font-extrabold text-snow">{m.name}</strong>
-              <span className="text-snow/55"> · {m.text}</span>
+              <span className="text-ash"> · {m.text}</span>
             </li>
           ))}
         </ul>

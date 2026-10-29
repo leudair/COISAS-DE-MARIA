@@ -6,7 +6,7 @@ import { StorySection } from "./StorySection";
 
 export function JourneySection() {
   return (
-    <StorySection id="trajetoria" number="02" title={journey.title} className="bg-graphite">
+    <StorySection id="trajetoria" number="02" title={journey.title} className="band-carbon">
       <BiographyTimeline items={journey.steps} alternate />
       <div className="mt-16 lg:mt-24">
         <ImageGallery items={journey.photos} />

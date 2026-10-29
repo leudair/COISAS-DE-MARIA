@@ -9,11 +9,20 @@
   --color-blush: #f5c2d9;
   --color-snow: #f5f5f7;
   --color-champagne: #c8a48c;
-  --color-muted: #a1a1a6;
+  /* Neutros do DESIGN-2.md */
+  --color-steel: #333336;
+  --color-slate: #6e6e73;
+  --color-ash: #86868b;
+  --color-chrome: #161617;
 
   --font-sans: "Nunito", ui-rounded, system-ui, sans-serif;
 
   --radius-media: 28px;
+  --radius-nav: 20px;
+
+  /* Elevação: só keylines de 1px, sem sombras (DESIGN-2.md) */
+  --shadow-subtle: rgb(40, 40, 40) 0px 0px 0px 1px;
+  --shadow-subtle-2: rgb(110, 110, 115) 0px 0px 0px 1px;
   --container-content: 1200px;
 
   --ease-cinema: cubic-bezier(0.22, 1, 0.36, 1);
@@ -22,7 +31,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 64px;
+    scroll-padding-top: 48px;
     -webkit-text-size-adjust: 100%;
   }
   body {
@@ -30,7 +39,8 @@
     color: var(--color-snow);
     font-family: var(--font-sans);
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.47;
+    letter-spacing: -0.022em;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
   }
@@ -56,12 +66,28 @@
     .container-content { padding-inline: 32px; }
   }
 
+  /* Ritmo vertical: 80px no celular, 144px no desktop (escala 90/144 do DESIGN-2.md) */
   .section {
     position: relative;
-    padding-block: 72px;
+    padding-block: 80px;
   }
   @media (min-width: 1024px) {
-    .section { padding-block: 128px; }
+    .section { padding-block: 144px; }
+  }
+
+  /* Faixa Carbon: #1d1d1f desvanecendo para preto em 288px */
+  .band-carbon {
+    background: linear-gradient(var(--color-ink), var(--color-black) 288px);
+  }
+
+  /* Painel contido (Comparison Panel) */
+  .panel {
+    border-radius: 28px;
+    background: var(--color-ink);
+    padding: 24px;
+  }
+  @media (min-width: 1024px) {
+    .panel { padding: 48px; }
   }
 
   .eyebrow {
@@ -72,24 +98,30 @@
     color: var(--color-pink);
   }
 
+  /* Display: até 80px, tracking -1.2px@80px */
   .heading-xl {
     font-weight: 900;
-    font-size: clamp(2rem, 7.5vw, 4.5rem);
+    font-size: clamp(2.25rem, 8vw, 5rem);
     line-height: 1.05;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.015em;
     text-wrap: balance;
   }
+  /* Títulos de seção: 32px no celular, 56px no desktop */
   .heading-lg {
     font-weight: 800;
-    font-size: clamp(1.75rem, 5.5vw, 3.25rem);
-    line-height: 1.1;
+    font-size: clamp(2rem, 5.5vw, 3.5rem);
+    line-height: 1.08;
     letter-spacing: -0.015em;
     text-wrap: balance;
   }
   .lead {
     font-size: clamp(1.0625rem, 2.2vw, 1.3125rem);
-    line-height: 1.55;
+    line-height: 1.47;
     color: color-mix(in srgb, var(--color-snow) 82%, transparent);
+  }
+  /* Texto de apoio (Ash) */
+  .support {
+    color: var(--color-ash);
   }
 
   /* Efeito 3D discreto em tipografia real */
@@ -114,7 +146,7 @@
     gap: 8px;
     min-height: 48px;
     padding: 12px 26px;
-    border-radius: 999px;
+    border-radius: 9999px;
     font-weight: 800;
     font-size: 16px;
     line-height: 1.2;
@@ -128,7 +160,7 @@
   }
   .btn-primary:hover { background: #d90078; }
   .btn-ghost {
-    border: 1px solid color-mix(in srgb, var(--color-snow) 35%, transparent);
+    border: 1px solid var(--color-slate);
     color: var(--color-snow);
   }
   .btn-ghost:hover {
@@ -141,13 +173,29 @@
     overflow: hidden;
     border-radius: var(--radius-media);
     background: var(--color-graphite);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: var(--shadow-subtle);
   }
 
+  /* Tile: 28px, sem sombra, keyline sutil */
   .card {
-    border-radius: 24px;
+    border-radius: 28px;
     background: var(--color-graphite);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow: var(--shadow-subtle);
+  }
+  .panel .card,
+  .band-carbon .card {
+    background: var(--color-black);
+  }
+
+  /* Cápsula translúcida (paginação de mídia) */
+  .capsule {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    border-radius: 9999px;
+    background: rgba(51, 51, 54, 0.72);
+    backdrop-filter: blur(12px);
   }
 
   .quote {
