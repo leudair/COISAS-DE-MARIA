@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+/* Tokens de marca (adaptados da lógica do DESIGN-2.md para a identidade Coisas de Maria) */
+@theme {
+  --color-black: #000000;
+  --color-graphite: #0e0e0e;
+  --color-ink: #1d1d1f;
+  --color-pink: #f50087;
+  --color-blush: #f5c2d9;
+  --color-snow: #f5f5f7;
+  --color-champagne: #c8a48c;
+  --color-muted: #a1a1a6;
+
+  --font-sans: "Nunito", ui-rounded, system-ui, sans-serif;
+
+  --radius-media: 28px;
+  --container-content: 1200px;
+
+  --ease-cinema: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 64px;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-black);
+    color: var(--color-snow);
+    font-family: var(--font-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection {
+    background: var(--color-pink);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-pink);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+}
+
+@layer components {
+  .container-content {
+    width: 100%;
+    max-width: var(--container-content);
+    margin-inline: auto;
+    padding-inline: 20px;
+  }
+  @media (min-width: 640px) {
+    .container-content { padding-inline: 32px; }
+  }
+
+  .section {
+    position: relative;
+    padding-block: 72px;
+  }
+  @media (min-width: 1024px) {
+    .section { padding-block: 128px; }
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-pink);
+  }
+
+  .heading-xl {
+    font-weight: 900;
+    font-size: clamp(2rem, 7.5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+  .heading-lg {
+    font-weight: 800;
+    font-size: clamp(1.75rem, 5.5vw, 3.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+  .lead {
+    font-size: clamp(1.0625rem, 2.2vw, 1.3125rem);
+    line-height: 1.55;
+    color: color-mix(in srgb, var(--color-snow) 82%, transparent);
+  }
+
+  /* Efeito 3D discreto em tipografia real */
+  .text-3d {
+    text-shadow:
+      0 1px 0 rgba(245, 0, 135, 0.55),
+      0 2px 0 rgba(245, 0, 135, 0.35),
+      0 3px 0 rgba(120, 0, 66, 0.35),
+      0 10px 24px rgba(245, 0, 135, 0.25);
+  }
+  .text-3d-soft {
+    text-shadow:
+      0 1px 0 rgba(245, 194, 217, 0.35),
+      0 2px 0 rgba(245, 0, 135, 0.2),
+      0 8px 20px rgba(0, 0, 0, 0.6);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: center;
+    transition: transform 0.25s var(--ease-cinema), background-color 0.25s, color 0.25s, border-color 0.25s;
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary {
+    background: var(--color-pink);
+    color: #fff;
+  }
+  .btn-primary:hover { background: #d90078; }
+  .btn-ghost {
+    border: 1px solid color-mix(in srgb, var(--color-snow) 35%, transparent);
+    color: var(--color-snow);
+  }
+  .btn-ghost:hover {
+    border-color: var(--color-pink);
+    color: var(--color-blush);
+  }
+
+  .media-frame {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius-media);
+    background: var(--color-graphite);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .card {
+    border-radius: 24px;
+    background: var(--color-graphite);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .quote {
+    font-weight: 800;
+    font-size: clamp(1.375rem, 4vw, 2.25rem);
+    line-height: 1.25;
+    text-wrap: balance;
+  }
+}
+
+/* Revelação na rolagem */
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity 0.9s var(--ease-cinema), transform 0.9s var(--ease-cinema);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero: entrada do nome */
+@keyframes name-in {
+  from { opacity: 0; transform: translate3d(0, 0.35em, 0) rotateX(35deg); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+.name-letter {
+  display: inline-block;
+  opacity: 0;
+  animation: name-in 1.1s var(--ease-cinema) forwards;
+}
+
+/* Iluminação de fundo */
+@keyframes glow-drift {
+  0%, 100% { transform: translate3d(-6%, -4%, 0) scale(1); }
+  50% { transform: translate3d(6%, 4%, 0) scale(1.08); }
+}
+.glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: glow-drift 18s ease-in-out infinite;
+}
+
+/* Partículas */
+@keyframes particle-rise {
+  0% { transform: translate3d(0, 0, 0); opacity: 0; }
+  15% { opacity: var(--p-opacity, 0.6); }
+  100% { transform: translate3d(var(--p-drift, 0px), -110vh, 0); opacity: 0; }
+}
+.particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 999px;
+  background: var(--color-pink);
+  box-shadow: 0 0 10px rgba(245, 0, 135, 0.8);
+  animation: particle-rise linear infinite;
+}
+
+/* Reflexo do espelho */
+@keyframes sheen {
+  0% { transform: translateX(-120%) skewX(-18deg); }
+  60%, 100% { transform: translateX(220%) skewX(-18deg); }
+}
+.mirror-sheen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  animation: sheen 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Animações pausadas fora da tela */
+.paused-offscreen [data-anim],
+.paused-offscreen .glow,
+.paused-offscreen .particle,
+.paused-offscreen.mirror-sheen::after {
+  animation-play-state: paused;
+}
+
+/* Carrossel 3D */
+.carousel-stage {
+  perspective: 1400px;
+}
+.carousel-ring {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.carousel-card {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .name-letter { animation: none; opacity: 1; }
+  .glow, .particle, .mirror-sheen::after, [data-anim] { animation: none !important; }
+  .particle { display: none; }
+}

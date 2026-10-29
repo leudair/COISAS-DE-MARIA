@@ -1,0 +1,251 @@
+/**
+ * Conteúdo editável do site.
+ *
+ * Fotos: coloque o arquivo em /public/media/<pasta>/ e preencha `src`
+ * (ex.: "/media/hero/ana-liz.jpg"). Enquanto `src` estiver vazio, o site
+ * mostra um placeholder marcado com a descrição da foto esperada.
+ *
+ * Textos marcados com `review: true` precisam ser conferidos e aprovados
+ * pela Ana Liz antes da publicação.
+ */
+
+export type Media = {
+  /** Caminho do arquivo em /public. Vazio = placeholder. */
+  src?: string;
+  /** Texto alternativo (acessibilidade). */
+  alt: string;
+  /** Descrição da foto que deve ser enviada (aparece no placeholder). */
+  needed: string;
+  caption?: string;
+  /** Proporção do enquadramento (largura/altura). */
+  ratio?: "portrait" | "landscape" | "square";
+};
+
+export type Testimonial = {
+  name: string;
+  text: string;
+  photo?: Media;
+  /** Confirme que a cliente autorizou a publicação. */
+  authorized: boolean;
+};
+
+export const links = {
+  instagramAna: "https://www.instagram.com/analuciadeliz/",
+  instagramBrand: "https://www.instagram.com/coisasdemariacb/",
+  store: "https://coisasdemariasexshop.com/",
+  /** TODO: confirmar URL da página de produtos no site comercial. */
+  products: "https://coisasdemariasexshop.com/",
+};
+
+export const site = {
+  name: "Ana Liz | Coisas de Maria",
+  url: "https://example.com", // TODO: domínio definitivo
+  title: "Ana Liz — A mulher por trás da Coisas de Maria",
+  description:
+    "Uma história de fé, força, amor-próprio e recomeço. Conheça a trajetória de Ana Liz, idealizadora da Coisas de Maria.",
+  concept: "Muito além da marca, existe uma história.",
+};
+
+export const nav = [
+  { href: "#historia", label: "História" },
+  { href: "#espelho", label: "Espelho" },
+  { href: "#familia", label: "Família" },
+  { href: "#missao", label: "Missão" },
+  { href: "#coisas-de-maria", label: "A marca" },
+  { href: "#palestra", label: "Palestra" },
+];
+
+export const hero = {
+  title: "ANA LIZ",
+  subtitle: "A mulher por trás da marca.",
+  text: "Uma história de fé, força e recomeço que se transformou em uma missão de amor e autoestima.",
+  photo: {
+    alt: "Ana Liz, de cabeça raspada, olhando para a câmera",
+    needed: "Foto atual da Ana Liz (preferência: cabeça raspada), aprovada por ela",
+    ratio: "portrait",
+  } satisfies Media,
+};
+
+export const childhood = {
+  title: "A menina que sonhava além dos limites.",
+  quote: "Eu descobri que é ótimo ser ovelha negra, porque ela se destaca.",
+  review: true,
+  milestones: [
+    {
+      tag: "Raízes",
+      title: "A avó Maria",
+      text: "A presença da avó Maria marcou a infância de Ana e se tornou uma das maiores referências da sua vida.",
+    },
+    {
+      tag: "Fé",
+      title: "Uma fé aprendida cedo",
+      text: "Desde pequena, Ana aprendeu a fé que a acompanharia em cada fase da sua história.",
+    },
+    {
+      tag: "Desafio",
+      title: "A dislexia",
+      text: "A leitura e a escrita vieram com dificuldades. A dislexia transformou a escola em um caminho de obstáculos a superar.",
+    },
+    {
+      tag: "Conquista",
+      title: "A faculdade",
+      text: "Mesmo com as barreiras educacionais, Ana chegou à faculdade e provou para si mesma que podia acreditar em um futuro diferente.",
+    },
+  ],
+  photos: [
+    { alt: "Ana Liz na infância", needed: "Foto de infância da Ana", ratio: "portrait" },
+    { alt: "Ana Liz com a avó Maria", needed: "Foto da Ana com a avó Maria", ratio: "landscape" },
+  ] satisfies Media[],
+};
+
+export const journey = {
+  title: "Todo grande sonho começa com um primeiro passo.",
+  review: true,
+  steps: [
+    { title: "Segurança do trabalho", text: "Antes de empreender, Ana atuava na área de segurança do trabalho." },
+    { title: "O despertar na faculdade", text: "Foi durante a faculdade que ela descobriu o empreendedorismo." },
+    { title: "As primeiras mercadorias", text: "As primeiras peças vieram do Paraguai." },
+    { title: "Sacoleira", text: "Ana começou vendendo como sacoleira." },
+    { title: "A casa da avó", text: "O primeiro espaço do negócio foi montado na casa da avó." },
+    { title: "A sala comercial", text: "O negócio cresceu e ganhou uma sala comercial." },
+    { title: "O centro de Lages", text: "A loja chegou ao centro de Lages." },
+    { title: "O preconceito", text: "No caminho, Ana enfrentou o preconceito que ainda existe no ramo." },
+    { title: "Balneário Camboriú", text: "A mudança para Balneário Camboriú trouxe uma nova fase e a adaptação do negócio." },
+    { title: "Coisas de Maria", text: "Dessa trajetória nasceu a Coisas de Maria." },
+  ],
+  photos: [
+    { alt: "Primeiros tempos do negócio", needed: "Foto do início: vendas como sacoleira ou primeiro espaço", ratio: "landscape" },
+    { alt: "Loja no centro de Lages", needed: "Foto da loja em Lages", ratio: "landscape" },
+    { alt: "Loja em Balneário Camboriú", needed: "Foto da loja em Balneário Camboriú", ratio: "landscape" },
+  ] satisfies Media[],
+};
+
+export const mirror = {
+  title: "A mulher por trás do espelho.",
+  subtitle: "Quando aprendi a me enxergar com amor.",
+  quote: "O meu intuito nunca foi vender somente lingerie, mas resgatar a mulher que está por trás dela.",
+  review: true,
+  paragraphs: [
+    "Ao longo das diferentes fases do corpo, Ana aprendeu a perceber a beleza de outra forma.",
+    "Uma amiga experimentou uma peça de lingerie, e aquele momento mudou a maneira como Ana compreendia o papel do que vendia.",
+    "Aos poucos, ela voltou a se olhar no espelho. E descobriu no autocuidado uma parte essencial da sua missão.",
+  ],
+  photo: {
+    alt: "Retrato de Ana Liz",
+    needed: "Foto real da Ana para a composição do espelho",
+    ratio: "portrait",
+  } satisfies Media,
+};
+
+export const scars = {
+  title: "Minhas cicatrizes também contam minha história.",
+  quote: "A ausência da mama passou a ser o meu maior sinal de força.",
+  /** Informações clínicas: revisar cronologia e termos com a Ana. Não afirmar cura. */
+  review: true,
+  paragraphs: [
+    "Houve um tempo de dor. Uma obstrução intestinal, a perda de peso, cirurgias e a descoberta de nódulos.",
+    "Veio a mastectomia, um longo período de dores e recuperação, e o tratamento oncológico.",
+    "Em cada etapa, a fé foi abrigo. Amigos e familiares estiveram por perto. E, passo a passo, Ana reconstruiu a sua autoestima.",
+  ],
+  photo: {
+    alt: "Ana Liz em retrato sereno",
+    needed: "Foto escolhida pela própria Ana para esta fase (sem exposição sensacionalista)",
+    ratio: "portrait",
+  } satisfies Media,
+};
+
+export const family = {
+  title: "Minha família. Meu amor. Minha força.",
+  review: true,
+  members: [
+    { name: "Maria Eduarda", text: "Filha." },
+    { name: "Maria Valentina", text: "Filha." },
+    { name: "Avó Maria", text: "A influência que marcou a vida e a fé de Ana." },
+  ],
+  text: "A família é o lugar onde Ana encontra sentido. São as pessoas que acompanharam cada passo da sua trajetória, nos dias difíceis e nos momentos de celebração.",
+  album: [
+    { alt: "Ana com as filhas", needed: "Ana com as filhas", caption: "Minhas Marias", ratio: "portrait" },
+    { alt: "Ana com Maria Eduarda", needed: "Ana com Maria Eduarda", caption: "Maria Eduarda", ratio: "portrait" },
+    { alt: "Ana com Maria Valentina", needed: "Ana com Maria Valentina", caption: "Maria Valentina", ratio: "portrait" },
+    { alt: "Ana com familiares", needed: "Ana com familiares", caption: "Família", ratio: "portrait" },
+    { alt: "Momento especial da família", needed: "Momento importante da família", caption: "Momentos especiais", ratio: "portrait" },
+    { alt: "Celebração em família", needed: "Momento de gratidão ou celebração", caption: "Gratidão", ratio: "portrait" },
+    { alt: "Registro da trajetória pessoal", needed: "Foto da trajetória pessoal", caption: "Trajetória", ratio: "portrait" },
+    { alt: "Ana com a avó Maria", needed: "Ana com a avó Maria", caption: "Vó Maria", ratio: "portrait" },
+  ] satisfies Media[],
+};
+
+export const mission = {
+  title: "Não é apenas sobre lingerie. É sobre se reencontrar.",
+  quote: "Você é preciosa. Você é única. Tire um tempo para você.",
+  words: ["AMOR-PRÓPRIO", "AUTOESTIMA", "FÉ", "CORAGEM", "AUTOCUIDADO"],
+  pillars: [
+    "Incentivar o amor-próprio",
+    "Fortalecer a autoestima",
+    "Valorizar o autocuidado",
+    "Ajudar mulheres a se enxergarem novamente",
+    "Incentivar o cuidado com a saúde",
+    "Acolher mulheres em todas as fases da vida",
+    "Valorizar os relacionamentos com respeito e afeto",
+  ],
+  photos: [
+    { alt: "Atendimento na Coisas de Maria", needed: "Foto de atendimento/acolhimento na loja", ratio: "landscape" },
+  ] satisfies Media[],
+};
+
+export const brand = {
+  title: "Coisas de Maria.",
+  subtitle: "Muito além de lingerie, uma experiência de acolhimento.",
+  review: true,
+  // TODO: conferir com a Ana a origem exata do nome.
+  paragraphs: [
+    "A Coisas de Maria nasceu da trajetória de Ana, do primeiro passo como sacoleira até a loja de hoje. O nome está ligado à história da família.",
+    "Em Balneário Camboriú, o negócio se adaptou e ganhou um novo propósito: oferecer conforto, bem-estar e autoestima com um atendimento próximo e acolhedor.",
+  ],
+  differentials: [
+    { title: "Atendimento acolhedor", text: "Cada cliente é recebida com escuta, respeito e sem julgamentos." },
+    { title: "Relação próxima", text: "Mais do que vender, construir vínculo com quem entra na loja." },
+    { title: "Conforto e bem-estar", text: "Peças e produtos escolhidos para valorizar a mulher real." },
+  ],
+  /** TODO: conferir categorias com o catálogo atual da loja. */
+  categories: [
+    { title: "Lingerie", photo: { alt: "Lingerie Coisas de Maria", needed: "Foto de produto: lingerie", ratio: "portrait" } },
+    { title: "Moda íntima", photo: { alt: "Moda íntima Coisas de Maria", needed: "Foto de produto: moda íntima", ratio: "portrait" } },
+    { title: "Bem-estar e autocuidado", photo: { alt: "Produtos de bem-estar", needed: "Foto de produto: bem-estar/autocuidado", ratio: "portrait" } },
+    { title: "Sex shop", photo: { alt: "Produtos sex shop", needed: "Foto de produto: sex shop (discreta)", ratio: "portrait" } },
+  ] satisfies { title: string; photo: Media }[],
+  storePhoto: {
+    alt: "Fachada e interior da loja Coisas de Maria",
+    needed: "Foto real da loja",
+    ratio: "landscape",
+  } satisfies Media,
+};
+
+/**
+ * Depoimentos REAIS e AUTORIZADOS apenas.
+ * Lista vazia = a seção mostra um aviso de "em breve", sem conteúdo fictício.
+ */
+export const testimonials: Testimonial[] = [];
+
+export const talk = {
+  title: "Minha história também pode fortalecer a sua.",
+  talkName: "A Mulher por Trás do Espelho",
+  review: true,
+  text: "Ana compartilha sua trajetória, suas experiências e mensagens de fé em palestras. Em “A Mulher por Trás do Espelho”, ela fala sobre autoestima, superação e o caminho de volta para si mesma.",
+  video: {
+    /** Ex.: "/media/palestra/palestra.mp4" */
+    src: "",
+    poster: { alt: "Ana Liz palestrando", needed: "Capa do vídeo da palestra", ratio: "landscape" } as Media,
+  },
+  gallery: [
+    { alt: "Ana Liz no palco", needed: "Foto da palestra 1", ratio: "landscape" },
+    { alt: "Público da palestra", needed: "Foto da palestra 2", ratio: "landscape" },
+    { alt: "Ana Liz com participantes", needed: "Foto da palestra 3", ratio: "landscape" },
+  ] satisfies Media[],
+};
+
+export const closing = {
+  title: "Essa história continua. E você faz parte dela.",
+  text: "Cada passo desta história foi sustentado pela fé, pela gratidão e pelo amor. Se ela tocou você de alguma forma, venha conhecer a Coisas de Maria e acompanhar a Ana. A sua história também importa.",
+  values: ["FÉ.", "FORÇA.", "FAMÍLIA.", "AMOR-PRÓPRIO.", "RECOMEÇO.", "PROPÓSITO."],
+};
