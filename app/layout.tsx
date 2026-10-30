@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource-variable/bodoni-moda/opsz.css";
-import "@fontsource-variable/bodoni-moda/opsz-italic.css";
+import "@fontsource-variable/playfair-display/index.css";
+import "@fontsource-variable/playfair-display/wght-italic.css";
 import "@fontsource-variable/hanken-grotesk/index.css";
 import "./globals.css";
 import { site } from "@/content/site";

@@ -21,9 +21,9 @@ export function StorySection({ id, title, subtitle, from, to, className = "", ce
           <h2 id={`${id}-title`} className="heading-lg">
             {title}
           </h2>
-          {subtitle && <p className="lead muted mt-5">{subtitle}</p>}
+          {subtitle && <p className="lead muted mt-3 lg:mt-5">{subtitle}</p>}
         </header>
-        <div className="mt-14 lg:mt-20">{children}</div>
+        <div className="mt-8 lg:mt-20">{children}</div>
       </div>
     </section>
   );
