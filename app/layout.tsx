@@ -4,6 +4,7 @@ import "@fontsource-variable/bodoni-moda/opsz-italic.css";
 import "@fontsource-variable/hanken-grotesk/index.css";
 import "./globals.css";
 import { site } from "@/content/site";
+import { CookieBanner } from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Pular para o conteúdo
         </a>
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
