@@ -35,7 +35,7 @@ export function VideoSection() {
         </div>
       </div>
       <div className="mt-8 lg:mt-20">
-        <ImageGallery items={talk.gallery} />
+        <ImageGallery items={talk.gallery} mosaic />
       </div>
     </StorySection>
   );

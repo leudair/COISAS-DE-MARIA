@@ -6,22 +6,31 @@ import Image from "next/image";
 import type { Media } from "@/content/site";
 import { Photo } from "./Photo";
 
+/** Mosaico: fotos "wide" ocupam 2 colunas (a última, no computador, a linha inteira). */
+function mosaicCell(m: Media, last: boolean) {
+  if (m.ratio !== "wide") return "aspect-[4/5] lg:aspect-auto";
+  return last ? "col-span-2 aspect-video lg:col-span-3 lg:aspect-[2/1]" : "col-span-2 aspect-video";
+}
+
 /** Galeria responsiva com ampliação (lightbox) acessível. */
-export function ImageGallery({ items, columns = 3 }: { items: Media[]; columns?: 2 | 3 }) {
+export function ImageGallery({ items, columns = 3, mosaic }: { items: Media[]; columns?: 2 | 3; mosaic?: boolean }) {
   const [active, setActive] = useState<number | null>(null);
   const close = useCallback(() => setActive(null), []);
+  const grid = mosaic
+    ? "grid grid-cols-2 gap-3 lg:grid-cols-3 lg:gap-5"
+    : `grid gap-4 sm:grid-cols-2 ${columns === 3 ? "lg:grid-cols-3" : ""} lg:gap-6`;
 
   return (
     <>
-      <ul className={`grid gap-4 sm:grid-cols-2 ${columns === 3 ? "lg:grid-cols-3" : ""} lg:gap-6`}>
+      <ul className={grid}>
         {items.map((m, i) => (
-          <li key={i}>
+          <li key={i} className={mosaic ? mosaicCell(m, i === items.length - 1) : undefined}>
             {mediaSrc(m) ? (
-              <button type="button" onClick={() => setActive(i)} className="block w-full text-left" aria-label={`Ampliar foto: ${m.alt}`}>
-                <Photo media={m} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+              <button type="button" onClick={() => setActive(i)} className={`block w-full text-left ${mosaic ? "h-full" : ""}`} aria-label={`Ampliar foto: ${m.alt}`}>
+                <Photo media={m} fill={mosaic} sizes={mosaic ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"} />
               </button>
             ) : (
-              <Photo media={m} />
+              <Photo media={m} fill={mosaic} />
             )}
             {m.caption && <p className="muted mt-3 text-sm">{m.caption}</p>}
           </li>
