@@ -1,3 +1,4 @@
+import { tone } from "@/content/tones";
 import { links, talk } from "@/content/site";
 import { mediaSrc } from "@/content/media";
 import { ImageGallery } from "./ImageGallery";
@@ -9,7 +10,7 @@ import { StorySection } from "./StorySection";
 export function VideoSection() {
   const videoSrc = mediaSrc(talk.video);
   return (
-    <StorySection id="palestra" title={talk.title}>
+    <StorySection from={tone.velvet} to={tone.night} id="palestra" title={talk.title}>
       <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
         {videoSrc ? (
           <div className="media-frame aspect-video">

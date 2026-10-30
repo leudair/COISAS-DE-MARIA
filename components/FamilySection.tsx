@@ -1,3 +1,4 @@
+import { tone } from "@/content/tones";
 import { family } from "@/content/site";
 import { ReviewNote } from "./ReviewNote";
 import { RoundCarousel } from "./RoundCarousel";
@@ -5,7 +6,7 @@ import { StorySection } from "./StorySection";
 
 export function FamilySection() {
   return (
-    <StorySection id="familia" title={family.title} tone="light" center>
+    <StorySection from={tone.noir} to={tone.rosewood} id="familia" title={family.title} center>
       <div className="mx-auto max-w-2xl text-center">
         <p className="lead mx-auto">{family.text}</p>
         <p className="muted mx-auto mt-5 max-w-[52ch]">{family.members}</p>

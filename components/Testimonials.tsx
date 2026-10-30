@@ -1,3 +1,4 @@
+import { tone } from "@/content/tones";
 import { testimonials } from "@/content/site";
 import { Photo } from "./Photo";
 import { StorySection } from "./StorySection";
@@ -10,7 +11,7 @@ export function Testimonials() {
   const items = testimonials.filter((t) => t.authorized);
   if (items.length === 0) return null;
   return (
-    <StorySection id="clientes" title="O que dizem as clientes">
+    <StorySection from={tone.night} to={tone.night} id="clientes" title="O que dizem as clientes">
       <ul className="grid gap-x-12 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
         {items.map((t, i) => (
           <li key={i} className="rule border-t py-8">

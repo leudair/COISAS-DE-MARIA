@@ -1,10 +1,12 @@
 import { closing, links } from "@/content/site";
 import { mediaSrc } from "@/content/media";
+import { tone } from "@/content/tones";
 import { AmbientVideo } from "./AmbientVideo";
+import { bandStyle } from "./StorySection";
 
 export function Closing() {
   return (
-    <section id="encerramento" aria-labelledby="encerramento-title" className="section tone-dark border-t border-white/10">
+    <section id="encerramento" aria-labelledby="encerramento-title" className="section" style={bandStyle(tone.night, tone.noir)}>
       <div className="container-content">
         <div className="media-frame relative aspect-video">
           <AmbientVideo

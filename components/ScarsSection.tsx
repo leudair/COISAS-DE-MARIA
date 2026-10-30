@@ -1,3 +1,4 @@
+import { tone } from "@/content/tones";
 import { scars } from "@/content/site";
 import { Photo } from "./Photo";
 import { ReviewNote } from "./ReviewNote";
@@ -5,7 +6,7 @@ import { Quote, StorySection } from "./StorySection";
 
 export function ScarsSection() {
   return (
-    <StorySection id="cicatrizes" title={scars.title} className="border-t border-white/10">
+    <StorySection from={tone.night} to={tone.noir} id="cicatrizes" title={scars.title} >
       <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
         <div className="order-2 lg:order-1">
           <div className="prose-story lead">

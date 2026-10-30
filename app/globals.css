@@ -2,12 +2,10 @@
 
 /*
  * Identidade: retrato de moda (veludo, cetim, pérola) da Coisas de Maria.
- * Preto das artes + rosé de cetim nas seções claras, pink da marca só em ações.
+ * Fundos escuros em tons de veludo e vinho (content/tones.ts), pink da marca só em ações.
  */
 @theme {
   --color-noir: #000000;
-  --color-rose: #f6e3e8;
-  --color-wine: #2b0716;
   --color-pink: #f50087;
   --color-pink-deep: #d80077;
   --color-gold: #c9a46a;
@@ -70,19 +68,8 @@
     .section { padding-block: 152px; }
   }
 
-  /* Seção clara: rosé de cetim com texto vinho */
-  .tone-light {
-    background: var(--color-rose);
-    color: var(--color-wine);
-    --muted: color-mix(in srgb, var(--color-wine) 72%, transparent);
-    --rule: color-mix(in srgb, var(--color-wine) 18%, transparent);
-  }
-  .tone-dark {
-    --muted: var(--color-mist);
-    --rule: rgb(255 255 255 / 0.14);
-  }
-  .muted { color: var(--muted, var(--color-mist)); }
-  .rule { border-color: var(--rule, rgb(255 255 255 / 0.14)); }
+  .muted { color: var(--color-mist); }
+  .rule { border-color: rgb(255 255 255 / 0.14); }
 
   /* Escala tipográfica: 18 / 21 / 28 / 36 / 48 / 60 */
   .heading-lg {
@@ -129,11 +116,6 @@
     border-color: var(--color-snow);
     color: var(--color-noir);
   }
-  .tone-light .btn-ghost:hover {
-    background: var(--color-wine);
-    border-color: var(--color-wine);
-    color: var(--color-rose);
-  }
 
   .link {
     font-weight: 600;
@@ -142,7 +124,6 @@
     text-underline-offset: 5px;
   }
   .link:hover { color: var(--color-pink); }
-  .tone-light .link:hover { color: var(--color-pink-deep); }
 
   .media-frame {
     position: relative;
@@ -150,7 +131,31 @@
     border-radius: 2px;
     background: #140a0f;
   }
-  .tone-light .media-frame { background: color-mix(in srgb, var(--color-wine) 10%, transparent); }
+
+  /* Etapas da história: cartão discreto com medalhão do ícone */
+  .step-card {
+    padding: 18px 16px 20px;
+    border: 1px solid rgb(255 255 255 / 0.1);
+    border-radius: 4px;
+    background: rgb(255 255 255 / 0.03);
+  }
+  @media (min-width: 640px) {
+    .step-card { padding: 24px 22px 26px; }
+  }
+  .medallion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 9999px;
+    color: var(--color-pink);
+    border: 1px solid color-mix(in srgb, var(--color-pink) 55%, transparent);
+    background: radial-gradient(circle, rgb(245 0 135 / 0.14), transparent 70%);
+    /* segundo aro dourado, afastado do primeiro */
+    box-shadow: 0 0 0 4px rgb(0 0 0 / 0.35), 0 0 0 5px color-mix(in srgb, var(--color-gold) 55%, transparent);
+    margin: 5px;
+  }
 
   /* Citação da Ana: serifada, itálica, sem efeitos */
   .quote {

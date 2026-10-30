@@ -1,3 +1,4 @@
+import { tone } from "@/content/tones";
 import { mirror } from "@/content/site";
 import { Photo } from "./Photo";
 import { ReviewNote } from "./ReviewNote";
@@ -5,7 +6,7 @@ import { Quote, StorySection } from "./StorySection";
 
 export function MirrorSection() {
   return (
-    <StorySection id="espelho" title={mirror.title} subtitle={mirror.subtitle}>
+    <StorySection from={tone.wine} to={tone.night} id="espelho" title={mirror.title} subtitle={mirror.subtitle}>
       <div className="grid items-start gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
         <Photo media={mirror.photo} />
         <div>

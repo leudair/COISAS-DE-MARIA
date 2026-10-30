@@ -1,20 +1,30 @@
-type Item = { title: string; text: string };
+import { StoryIcon } from "./StoryIcon";
 
-/** Etapas da trajetória em ordem, numeradas, separadas por linhas finas. */
-export function BiographyTimeline({ items }: { items: Item[] }) {
+type Item = { title: string; text: string; icon?: string };
+
+/**
+ * Etapas da história em grade: 2 por linha no celular, até 5 no desktop.
+ * `numbered` mostra a ordem quando as etapas são uma sequência.
+ */
+export function BiographyTimeline({ items, numbered = false, columns = 5 }: { items: Item[]; numbered?: boolean; columns?: 2 | 4 | 5 }) {
+  const cols = { 2: "sm:grid-cols-2", 4: "sm:grid-cols-2 lg:grid-cols-4", 5: "sm:grid-cols-3 lg:grid-cols-5" }[columns];
+  const List = numbered ? "ol" : "ul";
   return (
-    <ol className="grid gap-x-16 sm:grid-cols-2">
+    <List className={`grid grid-cols-2 gap-3 sm:gap-4 ${cols}`}>
       {items.map((item, i) => (
-        <li key={item.title} className="rule grid grid-cols-[2.5rem_1fr] gap-x-4 border-t py-6">
-          <span aria-hidden className="font-serif text-2xl leading-none text-pink-deep tabular-nums">
-            {i + 1}
-          </span>
-          <div>
-            <h3 className="heading-md">{item.title}</h3>
-            <p className="muted mt-2">{item.text}</p>
+        <li key={item.title} className="step-card">
+          <div className="flex items-start justify-between">
+            <StoryIcon name={item.icon ?? "estrela"} />
+            {numbered && (
+              <span aria-hidden className="font-serif text-lg leading-none text-gold tabular-nums">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+            )}
           </div>
+          <h3 className="mt-5 font-serif text-[17px] leading-tight sm:text-xl">{item.title}</h3>
+          <p className="muted mt-2 text-[14px] leading-snug sm:text-[15px]">{item.text}</p>
         </li>
       ))}
-    </ol>
+    </List>
   );
 }

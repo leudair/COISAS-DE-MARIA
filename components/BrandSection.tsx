@@ -1,3 +1,4 @@
+import { tone } from "@/content/tones";
 import { brand, links } from "@/content/site";
 import { Photo } from "./Photo";
 import { ReviewNote } from "./ReviewNote";
@@ -5,7 +6,7 @@ import { StorySection } from "./StorySection";
 
 export function BrandSection() {
   return (
-    <StorySection id="coisas-de-maria" title={brand.title} subtitle={brand.subtitle} tone="light">
+    <StorySection from={tone.plum} to={tone.velvet} id="coisas-de-maria" title={brand.title} subtitle={brand.subtitle}>
       <div className="grid items-start gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
         <Photo media={brand.storePhoto} />
         <div className="prose-story lead">
