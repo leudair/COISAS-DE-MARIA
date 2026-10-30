@@ -242,17 +242,11 @@ export const talk = {
     file: "10-palestra/video",
     poster: { alt: "Ana Liz", file: "10-palestra/capa-video", needed: "Capa do vídeo da palestra", ratio: "wide" } as Media,
   },
-  /** Mosaico alternando pink (16:9, 2 colunas) e preto (4:5). Artes de IA aprovadas pelo Leudair. */
+  /** Mosaico: banner pink (16:9, 2 colunas) e duas fotos de preto (4:5). Artes de IA aprovadas pelo Leudair. */
   gallery: [
-    { alt: "Ana Liz de terno pink, com microfone, no palco diante do público", file: "10-palestra/palco-pink-1", needed: "Palestra: terno pink 1", ratio: "wide" },
-    { alt: "Ana Liz de preto, sentada em uma poltrona, conversando com o público", file: "10-palestra/palco-preto-1", needed: "Palestra: roupa preta 1", ratio: "portrait" },
-    { alt: "Ana Liz de preto, com a mão no peito, sorrindo no palco", file: "10-palestra/palco-preto-2", needed: "Palestra: roupa preta 2", ratio: "portrait" },
-    { alt: "Ana Liz de terno pink, falando ao público com o palco ao fundo", file: "10-palestra/palco-pink-2", needed: "Palestra: terno pink 2", ratio: "wide" },
-    { alt: "Momentos de Ana Liz de terno pink em palestra", file: "10-palestra/palco-pink-3", needed: "Palestra: terno pink 3", ratio: "wide" },
-    { alt: "Ana Liz de preto, em pé, falando no palco com flores ao fundo", file: "10-palestra/palco-preto-3", needed: "Palestra: roupa preta 3", ratio: "portrait" },
-    { alt: "Ana Liz de preto, sorrindo e gesticulando para a plateia", file: "10-palestra/palco-preto-4", needed: "Palestra: roupa preta 4", ratio: "portrait" },
-    { alt: "Ana Liz de terno pink no palco, com o título A fé me faz vencer", file: "10-palestra/palco-pink-4", needed: "Palestra: terno pink 4", ratio: "wide" },
-    { alt: "Ana Liz de terno pink sentada, falando ao público", file: "10-palestra/palco-pink-5", needed: "Palestra: terno pink 5", ratio: "wide" },
+    { alt: "Ana Liz de terno pink, com microfone, no palco diante do público", file: "10-palestra/palco-pink", needed: "Palestra: terno pink", ratio: "wide" },
+    { alt: "Ana Liz de preto, em pé, falando no palco com flores ao fundo", file: "10-palestra/palco-preto-de-pe", needed: "Palestra: roupa preta, de pé", ratio: "portrait" },
+    { alt: "Ana Liz de preto, sentada em uma poltrona, conversando com o público", file: "10-palestra/palco-preto-sentada", needed: "Palestra: roupa preta, sentada", ratio: "portrait" },
   ] satisfies Media[],
 };
 

@@ -38,8 +38,8 @@ O enquadramento é feito por corte central (sem distorcer). Deixe o rosto perto 
 | `08-marca/categoria-sex-shop` | Produto: sex shop (discreto) | Retrato 4:5 |
 | `10-palestra/video` | Vídeo da palestra (MP4 H.264, 1920×1080, até ~30 MB) | Vídeo 16:9 |
 | `10-palestra/capa-video` | Capa do vídeo | Paisagem 16:9 |
-| `10-palestra/palco-pink-1` … `palco-pink-5` | Galeria da palestra: terno pink | Paisagem 16:9 |
-| `10-palestra/palco-preto-1` … `palco-preto-4` | Galeria da palestra: roupa preta | Retrato 4:5 |
+| `10-palestra/palco-pink` | Galeria da palestra: terno pink | Paisagem 16:9 |
+| `10-palestra/palco-preto-de-pe`, `palco-preto-sentada` | Galeria da palestra: roupa preta | Retrato 4:5 |
 | `logo/logo-horizontal` | Logo horizontal **branca** (SVG de preferência), só após aprovação | ~5:1 |
 
 ## Artes já colocadas (pasta "COISAS DE MARIA")
