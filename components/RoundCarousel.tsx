@@ -14,7 +14,7 @@
  * - Pausa ao passar o mouse, tocar ou arrastar; retoma após alguns segundos.
  * - Sem rotação automática com prefers-reduced-motion; para fora da tela.
  * - Tamanho responsivo e `touch-action: pan-y` para não travar a rolagem no celular.
- * - Borda pink sutil nas fotos.
+ * - Cantos retos e sem sombra, no estilo editorial do site.
  */
 
 import { mediaSrc } from "@/content/media";
@@ -51,7 +51,7 @@ export function RoundCarousel({
   sensitivity = 5,
   tilt = 0,
   perspective = 3000,
-  cornerRadius = 16,
+  cornerRadius = 2,
   innerDim = 2,
 }: Props) {
   const count = items.length;
@@ -227,7 +227,7 @@ export function RoundCarousel({
                 <button
                   type="button"
                   style={face}
-                  className="block shadow-[0_0_0_1px_rgba(245,0,135,0.3),0_10px_30px_rgba(0,0,0,0.35)]"
+                  className="block"
                   aria-label={`${m.caption ?? m.alt}${mediaSrc(m) ? ", ampliar foto" : " (foto pendente)"}`}
                   onFocus={() => rotateTo(i)}
                   onClick={(e) => {
@@ -237,7 +237,7 @@ export function RoundCarousel({
                 >
                   <Photo media={m} fill sizes={`${imageWidth}px`} className="!rounded-none !border-0" />
                   {mediaSrc(m) && m.caption && (
-                    <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-3 pt-8 pb-3 text-left text-sm font-bold text-snow">
+                    <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-3 pt-8 pb-3 text-left font-serif text-base italic text-snow">
                       {m.caption}
                     </span>
                   )}
@@ -252,20 +252,17 @@ export function RoundCarousel({
         </div>
       </div>
 
-      <div className="mt-4 flex justify-center">
-      <div className="capsule">
-        <button type="button" className="btn !min-h-11 !w-11 !p-0 hover:bg-white/10" aria-label="Foto anterior" onClick={() => rotateTo(front - 1)}>
-          <span aria-hidden>←</span>
+      <div className="mt-6 flex items-center justify-center gap-2">
+        <button type="button" className="flex h-11 w-11 items-center justify-center hover:text-pink-deep" aria-label="Foto anterior" onClick={() => rotateTo(front - 1)}>
+          <svg aria-hidden width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M15 5l-7 7 7 7" /></svg>
         </button>
-        <span className="min-w-16 text-center text-sm font-bold text-white/80" aria-live="polite">
-          {front + 1} / {count}
+        <span className="min-w-16 text-center text-[15px] tabular-nums" aria-live="polite">
+          {front + 1} de {count}
         </span>
-        <button type="button" className="btn !min-h-11 !w-11 !p-0 hover:bg-white/10" aria-label="Próxima foto" onClick={() => rotateTo(front + 1)}>
-          <span aria-hidden>→</span>
+        <button type="button" className="flex h-11 w-11 items-center justify-center hover:text-pink-deep" aria-label="Próxima foto" onClick={() => rotateTo(front + 1)}>
+          <svg aria-hidden width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M9 5l7 7-7 7" /></svg>
         </button>
       </div>
-      </div>
-
       {active !== null && mediaSrc(items[active]) && <Lightbox media={items[active]} onClose={() => setActive(null)} />}
     </div>
   );

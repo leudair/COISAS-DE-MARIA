@@ -5,7 +5,6 @@ import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import type { Media } from "@/content/site";
 import { Photo } from "./Photo";
-import { Reveal } from "./Reveal";
 
 /** Galeria responsiva com ampliação (lightbox) acessível. */
 export function ImageGallery({ items, columns = 3 }: { items: Media[]; columns?: 2 | 3 }) {
@@ -17,16 +16,14 @@ export function ImageGallery({ items, columns = 3 }: { items: Media[]; columns?:
       <ul className={`grid gap-4 sm:grid-cols-2 ${columns === 3 ? "lg:grid-cols-3" : ""} lg:gap-6`}>
         {items.map((m, i) => (
           <li key={i}>
-            <Reveal delay={i * 90}>
-              {mediaSrc(m) ? (
-                <button type="button" onClick={() => setActive(i)} className="block w-full rounded-[28px] text-left" aria-label={`Ampliar foto: ${m.alt}`}>
-                  <Photo media={m} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
-                </button>
-              ) : (
-                <Photo media={m} />
-              )}
-              {m.caption && <p className="mt-3 text-sm font-semibold text-ash">{m.caption}</p>}
-            </Reveal>
+            {mediaSrc(m) ? (
+              <button type="button" onClick={() => setActive(i)} className="block w-full text-left" aria-label={`Ampliar foto: ${m.alt}`}>
+                <Photo media={m} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+              </button>
+            ) : (
+              <Photo media={m} />
+            )}
+            {m.caption && <p className="muted mt-3 text-sm">{m.caption}</p>}
           </li>
         ))}
       </ul>
@@ -49,12 +46,12 @@ export function Lightbox({ media, onClose }: { media: Media; onClose: () => void
   return (
     <div role="dialog" aria-modal="true" aria-label={media.alt} className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4 backdrop-blur" onClick={onClose}>
       <div className="relative h-[80svh] w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
-        <Image src={mediaSrc(media)!} alt={media.alt} fill sizes="100vw" className="rounded-[28px] object-contain" />
+        <Image src={mediaSrc(media)!} alt={media.alt} fill sizes="100vw" className="object-contain" />
       </div>
-      <button type="button" autoFocus onClick={onClose} className="btn btn-ghost absolute top-4 right-4 bg-black/60" aria-label="Fechar foto ampliada">
+      <button type="button" autoFocus onClick={onClose} className="btn btn-ghost absolute top-4 right-4 bg-noir text-snow" aria-label="Fechar foto ampliada">
         Fechar
       </button>
-      {media.caption && <p className="absolute bottom-6 inset-x-0 text-center font-semibold text-snow/80">{media.caption}</p>}
+      {media.caption && <p className="absolute bottom-6 inset-x-0 text-center text-snow/80">{media.caption}</p>}
     </div>
   );
 }

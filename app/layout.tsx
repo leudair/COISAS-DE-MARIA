@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource/nunito/400.css";
-import "@fontsource/nunito/600.css";
-import "@fontsource/nunito/700.css";
-import "@fontsource/nunito/800.css";
-import "@fontsource/nunito/900.css";
+import "@fontsource-variable/bodoni-moda/opsz.css";
+import "@fontsource-variable/bodoni-moda/opsz-italic.css";
+import "@fontsource-variable/hanken-grotesk/index.css";
 import "./globals.css";
 import { site } from "@/content/site";
 
@@ -31,12 +29,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
-      </head>
+    <html lang="pt-BR">
       <body>
-        <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-full focus:bg-pink focus:px-4 focus:py-2 focus:font-bold">
+        <a href="#conteudo" className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-pink-deep focus:px-4 focus:py-2 focus:font-semibold">
           Pular para o conteúdo
         </a>
         {children}

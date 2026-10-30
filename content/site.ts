@@ -59,7 +59,7 @@ export const nav = [
 ];
 
 export const hero = {
-  title: "ANA LIZ",
+  title: "Ana Liz",
   subtitle: "A mulher por trás da marca.",
   text: "Uma história de fé, força e recomeço que se transformou em uma missão de amor e autoestima.",
   photo: {
@@ -159,11 +159,7 @@ export const scars = {
 export const family = {
   title: "Minha família. Meu amor. Minha força.",
   review: true,
-  members: [
-    { name: "Maria Eduarda", text: "Filha." },
-    { name: "Maria Valentina", text: "Filha." },
-    { name: "Avó Maria", text: "A influência que marcou a vida e a fé de Ana." },
-  ],
+  members: "As filhas Maria Eduarda e Maria Valentina, e a avó Maria, que marcou a vida e a fé de Ana.",
   text: "A família é o lugar onde Ana encontra sentido. São as pessoas que acompanharam cada passo da sua trajetória, nos dias difíceis e nos momentos de celebração.",
   /** Álbum do carrossel 3D (formato 16:9). */
   album: [
@@ -181,7 +177,6 @@ export const family = {
 export const mission = {
   title: "Não é apenas sobre lingerie. É sobre se reencontrar.",
   quote: "Você é preciosa. Você é única. Tire um tempo para você.",
-  words: ["AMOR-PRÓPRIO", "AUTOESTIMA", "FÉ", "CORAGEM", "AUTOCUIDADO"],
   pillars: [
     "Incentivar o amor-próprio",
     "Fortalecer a autoestima",
@@ -210,6 +205,7 @@ export const brand = {
     { title: "Relação próxima", text: "Mais do que vender, construir vínculo com quem entra na loja." },
     { title: "Conforto e bem-estar", text: "Peças e produtos escolhidos para valorizar a mulher real." },
   ],
+  categoriesTitle: "O que você encontra na loja",
   /** TODO: conferir categorias com o catálogo atual da loja. */
   categories: [
     { title: "Lingerie", photo: { alt: "Lingerie Coisas de Maria", file: "08-marca/categoria-lingerie", needed: "Foto de produto: lingerie", ratio: "portrait" } },
@@ -227,7 +223,7 @@ export const brand = {
 
 /**
  * Depoimentos REAIS e AUTORIZADOS apenas.
- * Lista vazia = a seção mostra um aviso de "em breve", sem conteúdo fictício.
+ * Lista vazia = a seção não aparece no site.
  */
 export const testimonials: Testimonial[] = [];
 
@@ -253,5 +249,5 @@ export const closing = {
   text: "Cada passo desta história foi sustentado pela fé, pela gratidão e pelo amor. Se ela tocou você de alguma forma, venha conhecer a Coisas de Maria e acompanhar a Ana. A sua história também importa.",
   video: { file: "11-encerramento/video", poster: "11-encerramento/video-capa" },
   photo: { alt: "Ana Liz de branco, sorrindo, sentada em uma poltrona", file: "11-encerramento/o-legado-continua", needed: "Arte: o legado continua", ratio: "wide" } satisfies Media,
-  values: ["FÉ.", "FORÇA.", "FAMÍLIA.", "AMOR-PRÓPRIO.", "RECOMEÇO.", "PROPÓSITO."],
+  values: "Fé, força, família, amor-próprio, recomeço e propósito.",
 };

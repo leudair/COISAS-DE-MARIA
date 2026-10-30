@@ -12,10 +12,9 @@ export function Logo({ className = "" }: { className?: string }) {
     return <Image src={LOGO_SRC} alt="Coisas de Maria" width={160} height={32} className={className} />;
   }
   return (
-    <span className={`inline-flex items-baseline gap-1.5 text-lg font-black tracking-tight ${className}`}>
-      <span className="text-snow">Ana Liz</span>
-      <span className="text-pink">·</span>
-      <span className="text-sm font-bold text-snow/60">Coisas de Maria</span>
+    <span className={`inline-flex items-baseline gap-3 ${className}`}>
+      <span className="font-serif text-[22px] leading-none">Ana Liz</span>
+      <span className="text-[13px] leading-none opacity-60">Coisas de Maria</span>
     </span>
   );
 }

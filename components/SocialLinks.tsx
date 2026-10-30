@@ -11,7 +11,7 @@ export function SocialLinks({ className = "" }: { className?: string }) {
     <ul className={`flex flex-wrap gap-x-6 gap-y-3 ${className}`}>
       {items.map((i) => (
         <li key={i.href + i.handle}>
-          <a href={i.href} target="_blank" rel="noopener noreferrer" aria-label={`${i.label} (abre em nova aba)`} className="font-semibold text-snow/70 transition-colors hover:text-pink">
+          <a href={i.href} target="_blank" rel="noopener noreferrer" aria-label={`${i.label} (abre em nova aba)`} className="text-snow/80 transition-colors hover:text-snow">
             {i.handle}
           </a>
         </li>

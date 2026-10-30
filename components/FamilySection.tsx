@@ -1,23 +1,15 @@
 import { family } from "@/content/site";
-import { Reveal } from "./Reveal";
 import { ReviewNote } from "./ReviewNote";
 import { RoundCarousel } from "./RoundCarousel";
 import { StorySection } from "./StorySection";
 
 export function FamilySection() {
   return (
-    <StorySection id="familia" number="05" title={family.title} center titleClassName="text-3d-soft">
-      <Reveal className="mx-auto max-w-2xl text-center">
-        <p className="lead">{family.text}</p>
-        <ul className="mt-8 flex flex-wrap justify-center gap-3">
-          {family.members.map((m) => (
-            <li key={m.name} className="rounded-full border border-pink/30 px-5 py-2 text-sm">
-              <strong className="font-extrabold text-snow">{m.name}</strong>
-              <span className="text-ash"> · {m.text}</span>
-            </li>
-          ))}
-        </ul>
-      </Reveal>
+    <StorySection id="familia" title={family.title} tone="light" center>
+      <div className="mx-auto max-w-2xl text-center">
+        <p className="lead mx-auto">{family.text}</p>
+        <p className="muted mx-auto mt-5 max-w-[52ch]">{family.members}</p>
+      </div>
       <div className="mt-14">
         <RoundCarousel items={family.album} imageWidth={360} imageHeight={203} spacing={1} />
       </div>
