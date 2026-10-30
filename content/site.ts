@@ -76,7 +76,7 @@ export const hero = {
 export const music = {
   title: "A história dela virou música.",
   text: "“A Fé Me Faz Vencer” conta a trajetória da Ana em forma de canção. Dê o play e ouça.",
-  youtubeId: "V6UdI0Au0TU",
+  youtubeId: "uLtXB9P1eXU",
   videoTitle: "A Fé Me Faz Vencer, clipe da história de Ana Liz",
 };
 
