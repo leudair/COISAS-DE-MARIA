@@ -127,7 +127,7 @@ export const journey = {
     { icon: "coracao", title: "Coisas de Maria", text: "Dessa trajetória nasceu a Coisas de Maria." },
   ],
   photos: [
-    { alt: "Ana Liz de vestido pink ao lado da fachada e do interior da loja Coisas de Maria", file: "03-trajetoria/ana-na-loja", needed: "Arte: Ana de pé ao lado da loja", ratio: "wide" },
+    { alt: "Ana Liz de terno pink, sorrindo, apontando para a loja Coisas de Maria", file: "03-trajetoria/ana-na-loja", needed: "Arte: Ana de pé ao lado da loja", ratio: "wide" },
   ] satisfies Media[],
 };
 
