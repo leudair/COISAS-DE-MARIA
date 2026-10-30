@@ -43,6 +43,26 @@ O enquadramento é feito por corte central (sem distorcer). Deixe o rosto perto 
 | `10-palestra/palestra-3` | Foto da palestra | Paisagem 4:3 |
 | `logo/logo-horizontal` | Logo horizontal **branca** (SVG de preferência), só após aprovação | ~5:1 |
 
+## Artes já colocadas (pasta "COISAS DE MARIA")
+As artes enviadas são horizontais (16:9) e foram colocadas assim:
+
+| Arquivo original | Onde está no site | Arquivo no site |
+|---|---|---|
+| 01_HERO_APRESENTACAO_ANA.mp4 | Abertura (vídeo de fundo, sem som) | `01-abertura/video` |
+| Retrato Glamour em Rosa Neon.png | Abertura (imagem reserva do vídeo) | `01-abertura/ana-liz` |
+| HISTORIA_ONDE_TUDO_COMECOU.png | Capítulo 01 – infância | `02-infancia/onde-tudo-comecou` |
+| EMPREENDEDORISMO_COISAS_DE_MARIA.png | Capítulo 02 – trajetória | `03-trajetoria/empreendedorismo` |
+| ESPELHO_IDENTIDADE_TRANSFORMACAO.png | Capítulo 03 – espelho | `04-espelho/ana-espelho` |
+| SUPERACAO_E_RENASCIMENTO.png | Capítulo 04 – cicatrizes | `05-cicatrizes/ana-forca` |
+| FAMILIA_E_AMOR.png, ANA_FAMILIA_UMA_NOVA_HISTORIA.png | Capítulo 05 – carrossel da família (junto com as outras artes) | `06-familia/…` |
+| ANA_PROPOSITO_LEGADO_INSPIRACAO.png | Capítulo 06 – missão | `07-missao/proposito` |
+| ANA_HISTORIA_DE_SUPERACAO_E_LEGADO_FINAL.png | Capítulo 07 – a marca | `08-marca/superacao-e-legado` |
+| ANA_UMA_HISTORIA_QUE_INSPIRA.mp4 | Capítulo 09 – vídeo (com som, play pelo visitante) | `10-palestra/video` |
+| ANA_HISTORIA_SUPERACAO_FINAL.mp4 | Encerramento (vídeo sem som) | `11-encerramento/video` |
+| ANA_O_LEGADO_CONTINUA.png | Encerramento (imagem reserva) e carrossel | `11-encerramento/o-legado-continua` |
+
+Ainda faltam: fotos de produtos das 4 categorias (`08-marca/categoria-…`), fotos da palestra (`10-palestra/palestra-1..3`) e logo.
+
 ## Legendas e textos alternativos
 Ficam em `content/site.ts` (campos `caption` e `alt`), se quiser trocar.
 

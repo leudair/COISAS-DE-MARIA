@@ -21,7 +21,7 @@ export type Media = {
   needed: string;
   caption?: string;
   /** Proporção do enquadramento (largura/altura). */
-  ratio?: "portrait" | "landscape" | "square";
+  ratio?: "portrait" | "landscape" | "square" | "wide";
 };
 
 export type Testimonial = {
@@ -63,10 +63,12 @@ export const hero = {
   subtitle: "A mulher por trás da marca.",
   text: "Uma história de fé, força e recomeço que se transformou em uma missão de amor e autoestima.",
   photo: {
-    alt: "Ana Liz, de cabeça raspada, olhando para a câmera",
+    alt: "Ana Liz, de cabeça raspada, em vestido pink sobre fundo escuro",
     file: "01-abertura/ana-liz", needed: "Foto atual da Ana Liz (preferência: cabeça raspada), aprovada por ela",
-    ratio: "portrait",
+    ratio: "wide",
   } satisfies Media,
+  /** Vídeo de fundo (sem som, em loop). Capa: 01-abertura/video-capa */
+  video: { file: "01-abertura/video", poster: "01-abertura/video-capa" },
 };
 
 export const childhood = {
@@ -96,8 +98,7 @@ export const childhood = {
     },
   ],
   photos: [
-    { alt: "Ana Liz na infância", file: "02-infancia/infancia", needed: "Foto de infância da Ana", ratio: "portrait" },
-    { alt: "Ana Liz com a avó Maria", file: "02-infancia/avo-maria", needed: "Foto da Ana com a avó Maria", ratio: "landscape" },
+    { alt: "Fotografias da trajetória de Ana sobre uma penteadeira, com cetim pink e pérolas", file: "02-infancia/onde-tudo-comecou", needed: "Arte: onde tudo começou", ratio: "wide" },
   ] satisfies Media[],
 };
 
@@ -117,9 +118,7 @@ export const journey = {
     { title: "Coisas de Maria", text: "Dessa trajetória nasceu a Coisas de Maria." },
   ],
   photos: [
-    { alt: "Primeiros tempos do negócio", file: "03-trajetoria/inicio", needed: "Foto do início: vendas como sacoleira ou primeiro espaço", ratio: "landscape" },
-    { alt: "Loja no centro de Lages", file: "03-trajetoria/lages", needed: "Foto da loja em Lages", ratio: "landscape" },
-    { alt: "Loja em Balneário Camboriú", file: "03-trajetoria/balneario-camboriu", needed: "Foto da loja em Balneário Camboriú", ratio: "landscape" },
+    { alt: "Fachada e interior da loja Coisas de Maria", file: "03-trajetoria/empreendedorismo", needed: "Arte: empreendedorismo", ratio: "wide" },
   ] satisfies Media[],
 };
 
@@ -134,9 +133,9 @@ export const mirror = {
     "Aos poucos, ela voltou a se olhar no espelho. E descobriu no autocuidado uma parte essencial da sua missão.",
   ],
   photo: {
-    alt: "Retrato de Ana Liz",
+    alt: "Ana Liz diante do espelho, com uma amiga refletida ao lado",
     file: "04-espelho/ana-espelho", needed: "Foto real da Ana para a composição do espelho",
-    ratio: "portrait",
+    ratio: "wide",
   } satisfies Media,
 };
 
@@ -151,9 +150,9 @@ export const scars = {
     "Em cada etapa, a fé foi abrigo. Amigos e familiares estiveram por perto. E, passo a passo, Ana reconstruiu a sua autoestima.",
   ],
   photo: {
-    alt: "Ana Liz em retrato sereno",
+    alt: "Ana Liz sorrindo, com tatuagens no braço e um lírio rosa",
     file: "05-cicatrizes/ana-forca", needed: "Foto escolhida pela própria Ana para esta fase (sem exposição sensacionalista)",
-    ratio: "portrait",
+    ratio: "wide",
   } satisfies Media,
 };
 
@@ -166,15 +165,16 @@ export const family = {
     { name: "Avó Maria", text: "A influência que marcou a vida e a fé de Ana." },
   ],
   text: "A família é o lugar onde Ana encontra sentido. São as pessoas que acompanharam cada passo da sua trajetória, nos dias difíceis e nos momentos de celebração.",
+  /** Álbum do carrossel 3D (formato 16:9). */
   album: [
-    { alt: "Ana com as filhas", file: "06-familia/01-ana-com-as-filhas", needed: "Ana com as filhas", caption: "Minhas Marias", ratio: "portrait" },
-    { alt: "Ana com Maria Eduarda", file: "06-familia/02-maria-eduarda", needed: "Ana com Maria Eduarda", caption: "Maria Eduarda", ratio: "portrait" },
-    { alt: "Ana com Maria Valentina", file: "06-familia/03-maria-valentina", needed: "Ana com Maria Valentina", caption: "Maria Valentina", ratio: "portrait" },
-    { alt: "Ana com familiares", file: "06-familia/04-familia", needed: "Ana com familiares", caption: "Família", ratio: "portrait" },
-    { alt: "Momento especial da família", file: "06-familia/05-momentos-especiais", needed: "Momento importante da família", caption: "Momentos especiais", ratio: "portrait" },
-    { alt: "Celebração em família", file: "06-familia/06-gratidao", needed: "Momento de gratidão ou celebração", caption: "Gratidão", ratio: "portrait" },
-    { alt: "Registro da trajetória pessoal", file: "06-familia/07-trajetoria", needed: "Foto da trajetória pessoal", caption: "Trajetória", ratio: "portrait" },
-    { alt: "Ana com a avó Maria", file: "06-familia/08-vo-maria", needed: "Ana com a avó Maria", caption: "Vó Maria", ratio: "portrait" },
+    { alt: "Ana Liz com o marido", file: "06-familia/familia-e-amor", needed: "Família e amor", caption: "Família e amor", ratio: "wide" },
+    { alt: "Ana Liz, o marido e as três filhas", file: "06-familia/uma-nova-historia", needed: "Uma nova história", caption: "Uma nova história", ratio: "wide" },
+    { alt: "Fotografias da trajetória de Ana", file: "02-infancia/onde-tudo-comecou", needed: "Onde tudo começou", caption: "Onde tudo começou", ratio: "wide" },
+    { alt: "Ana Liz diante do espelho", file: "04-espelho/ana-espelho", needed: "Espelho", caption: "Identidade", ratio: "wide" },
+    { alt: "Ana Liz sorrindo", file: "05-cicatrizes/ana-forca", needed: "Renascimento", caption: "Renascimento", ratio: "wide" },
+    { alt: "Ana Liz de terno pink", file: "07-missao/proposito", needed: "Propósito", caption: "Propósito", ratio: "wide" },
+    { alt: "Ana Liz de branco em uma poltrona", file: "11-encerramento/o-legado-continua", needed: "O legado continua", caption: "O legado continua", ratio: "wide" },
+    { alt: "A loja Coisas de Maria", file: "03-trajetoria/empreendedorismo", needed: "Empreendedorismo", caption: "Coisas de Maria", ratio: "wide" },
   ] satisfies Media[],
 };
 
@@ -192,7 +192,7 @@ export const mission = {
     "Valorizar os relacionamentos com respeito e afeto",
   ],
   photos: [
-    { alt: "Atendimento na Coisas de Maria", file: "07-missao/atendimento", needed: "Foto de atendimento/acolhimento na loja", ratio: "landscape" },
+    { alt: "Ana Liz sorrindo, de terno pink", file: "07-missao/proposito", needed: "Arte: propósito", ratio: "wide" },
   ] satisfies Media[],
 };
 
@@ -218,9 +218,10 @@ export const brand = {
     { title: "Sex shop", photo: { alt: "Produtos sex shop", file: "08-marca/categoria-sex-shop", needed: "Foto de produto: sex shop (discreta)", ratio: "portrait" } },
   ] satisfies { title: string; photo: Media }[],
   storePhoto: {
-    alt: "Fachada e interior da loja Coisas de Maria",
-    file: "08-marca/loja", needed: "Foto real da loja",
-    ratio: "landscape",
+    alt: "Ana Liz em vestido rosa diante da fachada da Coisas de Maria, com memórias da sua história",
+    file: "08-marca/superacao-e-legado",
+    needed: "Foto real da loja",
+    ratio: "wide",
   } satisfies Media,
 };
 
@@ -238,7 +239,7 @@ export const talk = {
   video: {
     /** public/media/10-palestra/video.mp4 (ou .webm/.mov) */
     file: "10-palestra/video",
-    poster: { alt: "Ana Liz palestrando", file: "10-palestra/capa-video", needed: "Capa do vídeo da palestra", ratio: "landscape" } as Media,
+    poster: { alt: "Ana Liz", file: "10-palestra/capa-video", needed: "Capa do vídeo da palestra", ratio: "wide" } as Media,
   },
   gallery: [
     { alt: "Ana Liz no palco", file: "10-palestra/palestra-1", needed: "Foto da palestra 1", ratio: "landscape" },
@@ -250,5 +251,7 @@ export const talk = {
 export const closing = {
   title: "Essa história continua. E você faz parte dela.",
   text: "Cada passo desta história foi sustentado pela fé, pela gratidão e pelo amor. Se ela tocou você de alguma forma, venha conhecer a Coisas de Maria e acompanhar a Ana. A sua história também importa.",
+  video: { file: "11-encerramento/video", poster: "11-encerramento/video-capa" },
+  photo: { alt: "Ana Liz de branco, sorrindo, sentada em uma poltrona", file: "11-encerramento/o-legado-continua", needed: "Arte: o legado continua", ratio: "wide" } satisfies Media,
   values: ["FÉ.", "FORÇA.", "FAMÍLIA.", "AMOR-PRÓPRIO.", "RECOMEÇO.", "PROPÓSITO."],
 };

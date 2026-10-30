@@ -1,1 +1,18 @@
-{}
+{
+  "01-abertura/ana-liz": "/media/01-abertura/ana-liz.jpg",
+  "01-abertura/video-capa": "/media/01-abertura/video-capa.jpg",
+  "01-abertura/video": "/media/01-abertura/video.mp4",
+  "02-infancia/onde-tudo-comecou": "/media/02-infancia/onde-tudo-comecou.jpg",
+  "03-trajetoria/empreendedorismo": "/media/03-trajetoria/empreendedorismo.jpg",
+  "04-espelho/ana-espelho": "/media/04-espelho/ana-espelho.jpg",
+  "05-cicatrizes/ana-forca": "/media/05-cicatrizes/ana-forca.jpg",
+  "06-familia/familia-e-amor": "/media/06-familia/familia-e-amor.jpg",
+  "06-familia/uma-nova-historia": "/media/06-familia/uma-nova-historia.jpg",
+  "07-missao/proposito": "/media/07-missao/proposito.jpg",
+  "08-marca/superacao-e-legado": "/media/08-marca/superacao-e-legado.jpg",
+  "10-palestra/capa-video": "/media/10-palestra/capa-video.jpg",
+  "10-palestra/video": "/media/10-palestra/video.mp4",
+  "11-encerramento/o-legado-continua": "/media/11-encerramento/o-legado-continua.jpg",
+  "11-encerramento/video-capa": "/media/11-encerramento/video-capa.jpg",
+  "11-encerramento/video": "/media/11-encerramento/video.mp4"
+}

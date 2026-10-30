@@ -1,4 +1,6 @@
 import { closing, links } from "@/content/site";
+import { mediaSrc } from "@/content/media";
+import { AmbientVideo } from "./AmbientVideo";
 import { Particles } from "./Particles";
 import { PauseOffscreen } from "./PauseOffscreen";
 import { Reveal } from "./Reveal";
@@ -11,6 +13,16 @@ export function Closing() {
         <Particles count={10} />
       </PauseOffscreen>
       <div className="container-content relative text-center">
+        <Reveal className="mx-auto mb-14 max-w-4xl lg:mb-20">
+          <div className="media-frame relative aspect-video">
+            <AmbientVideo
+              src={mediaSrc({ file: closing.video.file })}
+              poster={mediaSrc({ file: closing.video.poster }) ?? mediaSrc(closing.photo)}
+              label="Vídeo: a história de superação da Ana Liz"
+              className="absolute inset-0 h-full w-full"
+            />
+          </div>
+        </Reveal>
         <Reveal className="mx-auto max-w-3xl">
           <h2 id="encerramento-title" className="heading-xl text-3d-soft">{closing.title}</h2>
           <p className="lead mx-auto mt-6 max-w-[52ch]">{closing.text}</p>

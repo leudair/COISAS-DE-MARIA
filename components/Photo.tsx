@@ -6,6 +6,7 @@ const ratioClass = {
   portrait: "aspect-[4/5]",
   landscape: "aspect-[4/3]",
   square: "aspect-square",
+  wide: "aspect-video",
 } as const;
 
 type Props = {

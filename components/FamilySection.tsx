@@ -19,7 +19,7 @@ export function FamilySection() {
         </ul>
       </Reveal>
       <div className="mt-14">
-        <RoundCarousel items={family.album} />
+        <RoundCarousel items={family.album} imageWidth={360} imageHeight={203} spacing={1} />
       </div>
       {family.review && (
         <div className="text-center">

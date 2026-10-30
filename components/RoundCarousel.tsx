@@ -95,7 +95,7 @@ export function RoundCarousel({
     if (!stage) return;
     const ro = new ResizeObserver(([entry]) => {
       const width = entry.contentRect.width;
-      setScale(width < 640 ? Math.max(0.6, Math.min(1, (width * 0.4) / imageWidth)) : 1);
+      setScale(width < 640 ? Math.max(0.45, Math.min(1, (width * 0.6) / imageWidth)) : 1);
     });
     ro.observe(stage);
     return () => ro.disconnect();
