@@ -50,6 +50,7 @@ export const site = {
 };
 
 export const nav = [
+  { href: "#musica", label: "Música" },
   { href: "#historia", label: "História" },
   { href: "#espelho", label: "Espelho" },
   { href: "#familia", label: "Família" },
@@ -69,6 +70,14 @@ export const hero = {
   } satisfies Media,
   /** Vídeo de fundo (sem som, em loop). Capa: 01-abertura/video-capa */
   video: { file: "01-abertura/video", poster: "01-abertura/video-capa" },
+};
+
+/** Clipe musical da história da Ana (YouTube). */
+export const music = {
+  title: "A história dela virou música.",
+  text: "Um clipe que conta a trajetória da Ana em forma de canção. Dê o play e ouça.",
+  youtubeId: "V6UdI0Au0TU",
+  videoTitle: "Clipe musical da história de Ana Liz",
 };
 
 export const childhood = {
