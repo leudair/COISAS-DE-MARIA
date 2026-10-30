@@ -95,7 +95,7 @@ export function RoundCarousel({
     if (!stage) return;
     const ro = new ResizeObserver(([entry]) => {
       const width = entry.contentRect.width;
-      setScale(width < 640 ? Math.max(0.45, Math.min(1, (width * 0.6) / imageWidth)) : 1);
+      setScale(width < 640 ? Math.min(1, (width * 0.84) / imageWidth) : 1);
     });
     ro.observe(stage);
     return () => ro.disconnect();
@@ -193,7 +193,7 @@ export function RoundCarousel({
       <div
         ref={stageRef}
         className="relative mx-auto flex w-full max-w-6xl touch-pan-y select-none items-center justify-center overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_10%,#000_90%,transparent)]"
-        style={{ height: h + 120, perspective: `${perspective}px`, cursor: drag ? "grab" : "default" }}
+        style={{ height: h + (compact ? 48 : 120), perspective: `${perspective}px`, cursor: drag ? "grab" : "default" }}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}

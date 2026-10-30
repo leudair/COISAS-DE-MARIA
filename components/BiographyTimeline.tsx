@@ -6,8 +6,8 @@ type Item = { title: string; text: string; icon?: string };
  * Etapas da história em grade: 2 por linha no celular, até 5 no desktop.
  * `numbered` mostra a ordem quando as etapas são uma sequência.
  */
-export function BiographyTimeline({ items, numbered = false, columns = 5 }: { items: Item[]; numbered?: boolean; columns?: 2 | 4 | 5 }) {
-  const cols = { 2: "sm:grid-cols-2", 4: "sm:grid-cols-2 lg:grid-cols-4", 5: "sm:grid-cols-3 lg:grid-cols-5" }[columns];
+export function BiographyTimeline({ items, numbered = false, columns = 5 }: { items: Item[]; numbered?: boolean; columns?: 2 | 3 | 4 | 5 }) {
+  const cols = { 2: "sm:grid-cols-2", 3: "lg:grid-cols-3", 4: "sm:grid-cols-2 lg:grid-cols-4", 5: "sm:grid-cols-3 lg:grid-cols-5" }[columns];
   const List = numbered ? "ol" : "ul";
   return (
     <List className={`grid grid-cols-2 gap-3 sm:gap-4 ${cols}`}>

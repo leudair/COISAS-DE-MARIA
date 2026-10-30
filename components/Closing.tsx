@@ -16,7 +16,7 @@ export function Closing() {
             className="absolute inset-0 h-full w-full"
           />
         </div>
-        <div className="mt-16 grid gap-10 lg:mt-24 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
+        <div className="mt-8 grid gap-6 lg:mt-24 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
           <h2 id="encerramento-title" className="heading-lg">{closing.title}</h2>
           <div>
             <p className="lead muted">{closing.text}</p>
@@ -27,7 +27,7 @@ export function Closing() {
             </div>
           </div>
         </div>
-        <p className="muted mt-20 font-serif text-xl italic lg:mt-28 lg:text-2xl">{closing.values}</p>
+        <p className="muted mt-12 font-serif text-xl italic lg:mt-28 lg:text-2xl">{closing.values}</p>
       </div>
     </section>
   );
