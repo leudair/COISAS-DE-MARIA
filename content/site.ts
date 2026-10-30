@@ -36,6 +36,8 @@ export const links = {
   instagramAna: "https://www.instagram.com/analuciadeliz/",
   instagramBrand: "https://www.instagram.com/coisasdemariacb/",
   store: "https://coisasdemariasexshop.com/",
+  /** WhatsApp da loja, (47) 99919-9802. */
+  whatsapp: "https://wa.me/5547999199802?text=" + encodeURIComponent("Olá! Vim pelo site da Ana Liz."),
   /** TODO: confirmar URL da página de produtos no site comercial. */
   products: "https://coisasdemariasexshop.com/",
 };

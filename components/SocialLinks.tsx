@@ -3,6 +3,7 @@ import { links } from "@/content/site";
 const items = [
   { href: links.instagramAna, label: "Instagram da Ana Liz", handle: "@analuciadeliz" },
   { href: links.instagramBrand, label: "Instagram da Coisas de Maria", handle: "@coisasdemariacb" },
+  { href: links.whatsapp, label: "WhatsApp da Coisas de Maria", handle: "WhatsApp (47) 99919-9802" },
   { href: links.store, label: "Loja virtual Coisas de Maria", handle: "coisasdemariasexshop.com" },
 ];
 
