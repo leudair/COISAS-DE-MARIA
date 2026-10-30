@@ -3,6 +3,7 @@ import { mediaSrc } from "@/content/media";
 import { tone } from "@/content/tones";
 import { AmbientVideo } from "./AmbientVideo";
 import { bandStyle } from "./StorySection";
+import { InstagramIcon, WhatsAppIcon } from "./SocialIcons";
 
 export function Closing() {
   return (
@@ -22,8 +23,15 @@ export function Closing() {
             <p className="lead muted">{closing.text}</p>
             <div className="mt-10 flex flex-col items-start gap-4">
               <a href={links.store} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Visitar a loja virtual</a>
-              <a href={links.instagramAna} target="_blank" rel="noopener noreferrer" className="link mt-2">Seguir a Ana no Instagram</a>
-              <a href={links.instagramBrand} target="_blank" rel="noopener noreferrer" className="link">Seguir a Coisas de Maria</a>
+              <a href={links.instagramAna} target="_blank" rel="noopener noreferrer" className="btn btn-ghost gap-3">
+                <InstagramIcon /> Seguir a Ana no Instagram
+              </a>
+              <a href={links.instagramBrand} target="_blank" rel="noopener noreferrer" className="btn btn-ghost gap-3">
+                <InstagramIcon /> Seguir a Coisas de Maria
+              </a>
+              <a href={links.whatsapp} target="_blank" rel="noopener noreferrer" className="btn btn-ghost gap-3">
+                <WhatsAppIcon /> Chamar no WhatsApp
+              </a>
             </div>
           </div>
         </div>
