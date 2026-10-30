@@ -15,7 +15,6 @@ export function YouTubeEmbed({ id, title }: { id: string; title: string }) {
           src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
           title={title}
           allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-          allowFullScreen
         />
       ) : (
         <button type="button" onClick={() => setPlaying(true)} className="group absolute inset-0 block h-full w-full" aria-label={`Assistir: ${title}`}>
