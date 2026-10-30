@@ -17,8 +17,16 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: site.title,
     description: site.description,
+    url: site.url,
+    // Arquivo em public/ sem query string: o WhatsApp lê melhor uma URL de imagem simples.
+    images: [{ url: `${site.url}/og-ana-liz.jpg`, width: 1200, height: 630, type: "image/jpeg", alt: site.title }],
   },
-  twitter: { card: "summary_large_image", title: site.title, description: site.description },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    images: [`${site.url}/og-ana-liz.jpg`],
+  },
   // Versão de aprovação: não indexar até a publicação definitiva.
   robots: { index: false, follow: false },
 };
