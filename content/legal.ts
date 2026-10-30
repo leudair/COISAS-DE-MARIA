@@ -10,14 +10,15 @@ export const company = {
   storeName: "Coisas de Maria",
   /** TODO: razão social que consta no CNPJ. */
   legalName: "",
-  /** TODO: CNPJ no formato 00.000.000/0000-00. */
-  cnpj: "",
-  /** TODO: endereço (cidade/UF basta para o rodapé). */
-  address: "",
-  /** TODO: e-mail para pedidos sobre dados pessoais (LGPD) e dúvidas sobre o site. */
-  email: "",
-  /** Cidade/UF do foro (Termos de Uso). TODO: confirmar. */
-  forum: "",
+  /** Dados conforme o rodapé da loja virtual. */
+  cnpj: "32.526.649/0001-37",
+  address: "Rua Maria da Gloria Pereira, 48, Camboriú/SC",
+  /** E-mail para pedidos sobre dados pessoais (LGPD) e dúvidas sobre o site. */
+  email: "jose.coisasdemaria@gmail.com",
+  /** Telefone e WhatsApp. */
+  phone: "(47) 99919-9802",
+  /** Cidade/UF do foro (Termos de Uso). */
+  forum: "Camboriú/SC",
 };
 
 /** Data da última atualização das páginas legais. */

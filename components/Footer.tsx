@@ -40,7 +40,8 @@ export function Footer() {
           <Info label="Razão social" value={company.legalName} />
           <Info label="CNPJ" value={company.cnpj} />
           <Info label="Endereço" value={company.address} />
-          <Info label="Contato" value={company.email} />
+          <Info label="E-mail" value={company.email} />
+          <Info label="Telefone e WhatsApp" value={company.phone} />
         </div>
         <p className="mt-4">© {new Date().getFullYear()} {company.storeName}. Todos os direitos reservados.</p>
       </div>
