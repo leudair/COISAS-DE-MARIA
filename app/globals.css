@@ -141,6 +141,17 @@
     background: #140a0f;
   }
 
+  /* Vitrine da loja: moldura pink tipo LED (pedido do Leudair) */
+  .neon-frame {
+    border-radius: 6px;
+    border: 2px solid #ff3ba8;
+    box-shadow:
+      0 0 4px var(--color-pink),
+      0 0 14px color-mix(in srgb, var(--color-pink) 80%, transparent),
+      0 0 30px color-mix(in srgb, var(--color-pink) 45%, transparent),
+      inset 0 0 12px color-mix(in srgb, var(--color-pink) 45%, transparent);
+  }
+
   /* Etapas da história: cartão discreto com medalhão do ícone */
   .step-card {
     padding: 18px 16px 20px;

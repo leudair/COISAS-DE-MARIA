@@ -25,11 +25,11 @@ export function BrandSection() {
       </ul>
 
       <h3 className="heading-md mt-12 lg:mt-28">{brand.categoriesTitle}</h3>
-      <ul className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-2 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4 lg:gap-6">
+      <ul className="no-scrollbar -mx-5 mt-8 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 py-5 sm:mx-0 sm:py-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-4 lg:gap-6">
         {brand.categories.map((c) => (
           <li key={c.title} className="w-[72%] flex-none snap-start sm:w-auto">
-            <Photo media={c.photo} sizes="(min-width: 1024px) 25vw, 70vw" />
-            <p className="mt-3 text-lg">{c.title}</p>
+            <Photo media={c.photo} className="neon-frame" sizes="(min-width: 1024px) 25vw, 70vw" />
+            <p className="mt-4 text-lg">{c.title}</p>
           </li>
         ))}
       </ul>
