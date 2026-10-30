@@ -50,6 +50,7 @@ export const site = {
 };
 
 export const nav = [
+  { href: "#musica", label: "Música" },
   { href: "#historia", label: "História" },
   { href: "#espelho", label: "Espelho" },
   { href: "#familia", label: "Família" },
@@ -69,6 +70,14 @@ export const hero = {
   } satisfies Media,
   /** Vídeo de fundo (sem som, em loop). Capa: 01-abertura/video-capa */
   video: { file: "01-abertura/video", poster: "01-abertura/video-capa" },
+};
+
+/** Clipe musical da história da Ana (YouTube). */
+export const music = {
+  title: "A história dela virou música.",
+  text: "“A Fé Me Faz Vencer” conta a trajetória da Ana em forma de canção. Dê o play e ouça.",
+  youtubeId: "V6UdI0Au0TU",
+  videoTitle: "A Fé Me Faz Vencer, clipe da história de Ana Liz",
 };
 
 export const childhood = {
@@ -118,7 +127,7 @@ export const journey = {
     { icon: "coracao", title: "Coisas de Maria", text: "Dessa trajetória nasceu a Coisas de Maria." },
   ],
   photos: [
-    { alt: "Fachada e interior da loja Coisas de Maria", file: "03-trajetoria/empreendedorismo", needed: "Arte: empreendedorismo", ratio: "wide" },
+    { alt: "Ana Liz de terno pink, sorrindo, apontando para a loja Coisas de Maria", file: "03-trajetoria/ana-apontando-loja", needed: "Arte: Ana de pé ao lado da loja", ratio: "wide" },
   ] satisfies Media[],
 };
 

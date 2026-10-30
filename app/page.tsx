@@ -1,5 +1,6 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
+import { MusicSection } from "@/components/MusicSection";
 import { ChildhoodSection } from "@/components/ChildhoodSection";
 import { JourneySection } from "@/components/JourneySection";
 import { MirrorSection } from "@/components/MirrorSection";
@@ -28,6 +29,7 @@ export default function Home() {
       <Header />
       <main id="conteudo">
         <Hero />
+        <MusicSection />
         <ChildhoodSection />
         <JourneySection />
         <MirrorSection />

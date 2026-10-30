@@ -30,7 +30,7 @@ export function Hero() {
             <p className="lead muted mt-5 max-w-[40ch]">{hero.text}</p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <a href="#historia" className="btn btn-primary">Ler a história</a>
-              <a href="#coisas-de-maria" className="btn btn-ghost">Conhecer a Coisas de Maria</a>
+              <a href="#musica" className="btn btn-ghost">Ouvir a música</a>
             </div>
           </div>
         </div>
