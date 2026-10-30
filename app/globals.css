@@ -217,6 +217,11 @@
   opacity: 1;
   transform: none;
 }
+/* Sem JavaScript, o conteúdo aparece direto */
+html:not(.js) .reveal {
+  opacity: 1;
+  transform: none;
+}
 
 /* Hero: entrada do nome */
 @keyframes name-in {
