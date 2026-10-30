@@ -212,12 +212,11 @@ export const brand = {
     { title: "Conforto e bem-estar", text: "Peças e produtos escolhidos para valorizar a mulher real." },
   ],
   categoriesTitle: "O que você encontra na loja",
-  /** TODO: conferir categorias com o catálogo atual da loja. */
   categories: [
-    { title: "Lingerie", photo: { alt: "Lingerie Coisas de Maria", file: "08-marca/categoria-lingerie", needed: "Foto de produto: lingerie", ratio: "portrait" } },
-    { title: "Moda íntima", photo: { alt: "Moda íntima Coisas de Maria", file: "08-marca/categoria-moda-intima", needed: "Foto de produto: moda íntima", ratio: "portrait" } },
-    { title: "Bem-estar e autocuidado", photo: { alt: "Produtos de bem-estar", file: "08-marca/categoria-bem-estar", needed: "Foto de produto: bem-estar/autocuidado", ratio: "portrait" } },
-    { title: "Sex shop", photo: { alt: "Produtos sex shop", file: "08-marca/categoria-sex-shop", needed: "Foto de produto: sex shop (discreta)", ratio: "portrait" } },
+    { title: "Lingerie", photo: { alt: "Conjunto de renda pink com óleo de massagem Tântrica", file: "08-marca/categoria-lingerie", needed: "Foto de produto: lingerie", ratio: "portrait" } },
+    { title: "Moda íntima", photo: { alt: "Conjunto rosa de moda íntima", file: "08-marca/categoria-moda-intima", needed: "Foto de produto: moda íntima", ratio: "portrait" } },
+    { title: "Cosméticos íntimos", photo: { alt: "Lubrificante CB2, óleo de massagem Tântrica e sais de banho Acqua", file: "08-marca/categoria-bem-estar", needed: "Foto de produto: cosméticos/bem-estar", ratio: "portrait" } },
+    { title: "Acessórios", photo: { alt: "Acessórios coloridos para casais sobre fundo escuro", file: "08-marca/categoria-sex-shop", needed: "Foto de produto: acessórios (discreta)", ratio: "portrait" } },
   ] satisfies { title: string; photo: Media }[],
   storePhoto: {
     alt: "Ana Liz em vestido rosa diante da fachada da Coisas de Maria, com memórias da sua história",
