@@ -44,7 +44,7 @@ export const links = {
 
 export const site = {
   name: "Ana Liz | Coisas de Maria",
-  url: "https://ana-liz.vercel.app", // TODO: trocar pelo domínio definitivo
+  url: "https://souanaliz.com.br",
   title: "Ana Liz — A mulher por trás da Coisas de Maria",
   description:
     "Uma história de fé, força, amor-próprio e recomeço. Conheça a trajetória de Ana Liz, idealizadora da Coisas de Maria.",
